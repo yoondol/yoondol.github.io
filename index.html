@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yoonseok Kang is an M.S. researcher at Chung-Ang University working on robot learning, manipulation, and data-efficient adaptation.">
+  <meta name="theme-color" content="#f7f8f4">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Yoonseok Kang | Robot Learning">
+  <meta property="og:description" content="Research on robot manipulation, learning from experience, and data systems.">
+  <meta property="og:url" content="https://yoondol.github.io/">
+  <link rel="canonical" href="https://yoondol.github.io/">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <title>Yoonseok Kang | Robot Learning</title>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top">Yoonseok Kang</a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#about">About</a>
+        <a class="nav-cv" href="assets/Yoonseok_Kang_CV.pdf">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="name">
+      <div class="intro">
+        <p class="affiliation">Chung-Ang University <span aria-hidden="true">/</span> Seoul, South Korea</p>
+        <h1 id="name">Yoonseok Kang</h1>
+        <p class="hero-lead">I study how robots can learn from prior experience, generalize to new goals, and adapt with limited feedback.</p>
+        <p class="hero-body">I’m a master’s researcher in the <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, advised by <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>. My earlier work on distributed search and factory data systems taught me to study what fails under real operating conditions and what evidence can explain it.</p>
+        <div class="hero-links" aria-label="Profile links">
+          <a class="button" href="assets/Yoonseok_Kang_CV.pdf">Curriculum vitae</a>
+          <a class="text-link" href="mailto:kangcl1609@cau.ac.kr">Email</a>
+          <a class="text-link" href="https://github.com/yoondol">GitHub</a>
+          <a class="text-link" href="https://orcid.org/0009-0003-4190-193X">ORCID</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="section feature" id="research" aria-labelledby="research-heading">
+      <header class="section-header">
+        <h2 id="research-heading">Featured research</h2>
+      </header>
+      <article class="feature-body" aria-labelledby="reusemem-title">
+        <figure class="feature-figure">
+          <a class="figure-link" href="https://arxiv.org/html/2611.21115v1#S4.SS4" aria-label="View ReuseMem’s physical robot experiments in the paper">
+            <img src="assets/figures/reusemem.webp" alt="Two sequences from the ReuseMem experiments. An SO-101 robot uses earlier observations to select and return a case or relocate and restore a toy." width="1312" height="584">
+          </a>
+          <figcaption>SO-101 manipulation sequences from <a href="https://arxiv.org/abs/2611.21115">ReuseMem</a>.</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="venue">arXiv preprint <span aria-hidden="true">/</span> November 2026</p>
+          <h3 id="reusemem-title">ReuseMem <span>One Memory, Multiple Goals in Robot Manipulation</span></h3>
+          <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
+          <p class="feature-description">What should a robot remember when its next goal is still unknown? ReuseMem learns to retrieve evidence for each new request from one visual record and combines it with the current scene to guide manipulation.</p>
+          <div class="paper-links"><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">Paper PDF</a></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section publications" id="publications" aria-labelledby="publications-heading">
+      <header class="section-header">
+        <h2 id="publications-heading">Publications</h2>
+        <a href="https://orcid.org/0009-0003-4190-193X" class="section-link">ORCID</a>
+      </header>
+
+      <article class="paper">
+        <a class="paper-figure" href="https://doi.org/10.3390/systems14050515" aria-label="Open the Operational Data Foundation paper">
+          <img src="assets/figures/odff.webp" alt="Factory floor plan overlaid with photographs of installed sensors and a Raspberry Pi edge node" width="1002" height="726" loading="lazy">
+        </a>
+        <div class="paper-copy">
+          <p class="venue">Systems <span aria-hidden="true">/</span> 2026</p>
+          <h3><a href="https://doi.org/10.3390/systems14050515">Operational Data Foundation Framework for Smart Manufacturing in SMEs: Field Implementation and Evaluation</a></h3>
+          <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
+          <p>Designed and evaluated a factory data pipeline that makes it possible to trace where sensor data are lost and to reprocess historical records.</p>
+          <div class="paper-links"><a href="https://doi.org/10.3390/systems14050515">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="paper">
+        <a class="paper-figure data-figure" href="https://doi.org/10.1109/ACCESS.2026.3722613" aria-label="IEEE Access paper. Qwen2.5 32B chat latency from Table 13: SBC-GPU 29.86 seconds, desktop CPU 136.65 seconds, desktop GPU 34.26 seconds.">
+          <span class="data-title">Qwen2.5 32B <span>Latency (s)</span></span>
+          <span class="data-row"><span>SBC-GPU</span><span class="data-bar sbc"></span><span>29.86</span></span>
+          <span class="data-row"><span>Desktop CPU</span><span class="data-bar cpu"></span><span>136.65</span></span>
+          <span class="data-row"><span>Desktop GPU</span><span class="data-bar gpu"></span><span>34.26</span></span>
+          <span class="data-caption">IEEE Access, Table 13</span>
+        </a>
+        <div class="paper-copy">
+          <p class="venue">IEEE Access <span aria-hidden="true">/</span> 2026</p>
+          <h3><a href="https://doi.org/10.1109/ACCESS.2026.3722613">New Possibilities: Integrating an SBC With an eGPU for Small- to Medium-Scale LLMs</a></h3>
+          <p class="authors">Yeongmo Lee, Wonjib Kim, Dayeon Jung, Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dongchul Park</p>
+          <p>Benchmarked model loading, inference, and energy use on a Raspberry Pi connected to an external GPU.</p>
+          <div class="paper-links"><a href="https://doi.org/10.1109/ACCESS.2026.3722613">Paper</a><a href="https://github.com/Data-Computing-Systems-Lab/sbc-egpu-llm">Code</a></div>
+        </div>
+      </article>
+
+      <article class="paper">
+        <a class="paper-figure" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094" aria-label="Open the Elasticsearch paper">
+          <img src="assets/figures/elasticsearch.webp" alt="Bar charts comparing Elasticsearch search time during concurrent indexing under same-index and cross-index configurations" width="1092" height="332" loading="lazy">
+        </a>
+        <div class="paper-copy">
+          <p class="venue">Journal of Platform Technology <span aria-hidden="true">/</span> 2025</p>
+          <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
+          <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
+          <p>Measured how resource allocation, search settings, and concurrent indexing affect Elasticsearch performance.</p>
+          <div class="paper-links"><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="paper paper-text" id="kcc">
+        <div class="paper-copy">
+          <p class="venue">Korea Computer Congress <span aria-hidden="true">/</span> 2025</p>
+          <h3>Search Performance Optimization of Log Data on Elasticsearch</h3>
+          <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Yeongmo Lee, Dayeon Jung, Dongchul Park</p>
+          <div class="paper-links"><a href="https://dslab.konkuk.ac.kr/Lab_Activity/2025/KCC2025/Program%20book.pdf">Conference program</a></div>
+        </div>
+      </article>
+
+      <details class="manuscripts">
+        <summary>Manuscripts under review</summary>
+        <ul>
+          <li><strong>Characterization of Distributed Search on Resource-Constrained Edge Clusters</strong><span><b>Yoonseok Kang</b>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</span></li>
+          <li><strong>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</strong><span><b>Yoonseok Kang</b>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</span></li>
+          <li><strong>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</strong><span>Seunghoon Jeon, <b>Yoonseok Kang</b>, Dayeon Jung, Wonjib Kim, Dongchul Park</span></li>
+          <li><strong>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</strong><span>Dayeon Jung, Wonjib Kim, <b>Yoonseok Kang</b>, Seunghoon Jeon, Seungmin Rho, Dongchul Park</span></li>
+          <li><strong>Radar: A comprehensive self-tuning Hadoop framework for low power clusters</strong><span>Seunghoon Jeon, <b>Yoonseok Kang</b>, Dayeon Jung, Yeongmo Lee, Dongchul Park</span></li>
+          <li><strong>PiPP: A Pipeline-Parallel Distributed LLM Inference Platform for Low Cost SBC Clusters</strong><span>Dayeon Jung, Wonjib Kim, <b>Yoonseok Kang</b>, Seunghoon Jeon, Dongchul Park</span></li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <header class="section-header"><h2 id="about-heading">About</h2></header>
+      <div class="about-grid">
+        <div class="about-item">
+          <h3>Education</h3>
+          <dl>
+            <div><dt>Chung-Ang University</dt><dd>Master’s student, Department of Security Convergence</dd><dd class="date">2025–present</dd></div>
+            <div><dt>Chung-Ang University</dt><dd>B.Eng. in Data Science and B.Ed. in Education</dd><dd class="date">2025</dd></div>
+          </dl>
+        </div>
+        <div class="about-item">
+          <h3>Industry and projects</h3>
+          <dl>
+            <div><dt><a href="https://tero.kr/">TERO</a></dt><dd>I run a manufacturing software business that builds data infrastructure for small factories. I led the ON LOG project with OnGoing, connecting factory sensors and legacy equipment to monitoring and alerts.</dd></div>
+            <div><dt>Sprout for SeSAC</dt><dd>I led a team that built and deployed an education management platform for trainees and program staff.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="wordmark" href="#top">Yoonseok Kang</a>
+      <nav aria-label="Contact and profiles">
+        <a href="mailto:kangcl1609@cau.ac.kr">Email</a>
+        <a href="https://github.com/yoondol">GitHub</a>
+        <a href="https://www.linkedin.com/in/yoonseokkang/">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
