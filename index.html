@@ -7,14 +7,14 @@
   <meta name="theme-color" content="#f7f4ee">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yoonseok Kang | Robot Learning">
-  <meta property="og:description" content="Robot learning for manipulation, factory data systems, papers and CV.">
+  <meta property="og:description" content="Robot learning for manipulation, manufacturing data systems, papers and CV.">
   <meta property="og:url" content="https://yoondol.github.io/">
   <meta property="og:image" content="https://yoondol.github.io/assets/figures/reusemem-hardware.webp">
   <link rel="canonical" href="https://yoondol.github.io/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="preload" href="./assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./portfolio.css?v=113">
+  <link rel="stylesheet" href="./portfolio.css?v=114">
   <script src="./site.js" defer></script>
   <script src="./portfolio-motion.js?v=113" defer></script>
   <title>Yoonseok Kang | Robot Learning</title>
@@ -79,11 +79,11 @@
         <h1 id="name">Yoonseok Kang</h1>
         <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
         <div class="bio">
-          <p class="bio-lead">I study how robots can use <strong>past experience</strong> to handle new goals and adapt with limited feedback.</p>
-          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>. My background is in building sensor data systems for an operating food factory and studying distributed search on resource-constrained edge clusters.</p>
+          <p class="bio-lead">I study how robots can use <strong>past experience</strong> to act on new requests when the scene has changed. I’m also interested in how policies adapt with limited feedback.</p>
+          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>. Before robot learning, I built sensor and equipment data systems for a manufacturing site and studied distributed search on resource-constrained edge clusters. Both taught me to diagnose failures by tracing them through the data a system leaves behind.</p>
         </div>
         <ul class="profile-links" aria-label="Contact and profiles">
-          <li><a class="cv" href="./assets/Yoonseok_Kang_CV.pdf?v=113"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
+          <li><a class="cv" href="./assets/Yoonseok_Kang_CV.pdf?v=114"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
           <li><a href="mailto:kangcl1609@cau.ac.kr"><img src="./assets/icons/envelope.svg" alt="" width="16" height="16">Email</a></li>
           <li><a href="https://github.com/yoondol"><img src="./assets/icons/github.svg" alt="" width="16" height="16">GitHub</a></li>
           <li><a href="https://www.linkedin.com/in/yoonseokkang/"><img src="./assets/icons/linkedin.svg" alt="" width="16" height="16">LinkedIn</a></li>
@@ -101,7 +101,7 @@
               <h3><a href="https://yoondol.github.io/reusemem/"><span class="lead-name">ReuseMem</span>: One Memory, Multiple Goals in Robot Manipulation</a></h3>
               <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
               <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
-              <p class="summary">I built ReuseMem to let a robot act on new requests using a recording made before it knew the task. I trained the retriever to select observations that help predict expert actions, then built an adapter that combines them with the live scene for a frozen policy. I compared learned retrieval with evenly spaced frames at the same memory budget in simulation and tested it on an SO-101 arm.</p>
+              <p class="summary">A robot observes two cases before they are moved. From the same recording, it later needs to retrieve the case holding a USB drive and then return it to its original location. I trained a goal-conditioned retriever using expert-action prediction and built an adapter that combines the selected observations with the live scene for a frozen policy. In simulation, I compared retrieval with evenly spaced frames at the same memory budget. I also tested it on an SO-101 arm.</p>
               <p class="links"><a class="cta" href="https://yoondol.github.io/reusemem/">Project page<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a><a class="chip" href="https://arxiv.org/abs/2611.21115">arXiv</a><a class="chip" href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
             </div>
             <figure class="spot-fig">
@@ -240,7 +240,7 @@
         </ul>
         <dl class="focus">
           <div><dt>Robot manipulation</dt><dd>Designed the simulated and SO-101 experiments for ReuseMem so they isolate what the policy gains from the selected memory.</dd></div>
-          <div><dt>Factory data systems</dt><dd>Traced lost sensor readings across network, ingestion and storage logs in an operating food factory, diagnosed LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
+          <div><dt>Factory data systems</dt><dd>Traced lost sensor readings across network, ingestion and storage logs at an operating manufacturing site, diagnosed LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
           <div><dt>Distributed search</dt><dd>Tuned Elasticsearch indexing and search for log data and measured how node roles shape search on edge clusters.</dd></div>
         </dl>
       </article>
@@ -249,10 +249,13 @@
     <section class="block" id="industry" aria-labelledby="industry-h">
       <h2 id="industry-h">Industry</h2>
 
-      <article class="tero" aria-labelledby="tero-h">
-        <h3 id="tero-h"><a href="https://tero.kr/">TERO</a></h3>
-        <p class="role">Owner and Data Infrastructure Engineer, 2026 – present</p>
-        <p class="tero-copy">A software business for small manufacturers. I build its data infrastructure: sensor and equipment ingestion, edge buffering, monitoring dashboards and operational alerts.</p>
+      <article class="entry entry-featured">
+        <p class="when">2026 – present</p>
+        <div class="entry-body">
+          <h3><a href="https://tero.kr/">TERO</a></h3>
+          <p class="role">Owner and Data Infrastructure Engineer</p>
+          <p>I run TERO and build software that links equipment signals to production and traceability records. I also develop tools that let operators trace an answer back to the relevant source.</p>
+        </div>
       </article>
 
       <article class="entry">
@@ -260,7 +263,7 @@
         <div class="entry-body">
           <h3>ON LOG, in collaboration with <a href="https://www.ongo-ing.com/en/about">OnGoing Co., Ltd.</a></h3>
           <p class="role">Project Lead</p>
-          <p>Designed and deployed a fault-tolerant monitoring pipeline for a food and beverage manufacturer, from LoRaWAN field sensors and Raspberry Pi edge nodes to Grafana dashboards and alerts, with readings buffered at the edge during connectivity interruptions.</p>
+          <p>Designed and deployed a fault-tolerant monitoring pipeline for a manufacturing site, from LoRaWAN field sensors and Raspberry Pi edge nodes to Grafana dashboards and alerts, with readings buffered at the edge during connectivity interruptions.</p>
         </div>
       </article>
 
@@ -302,8 +305,10 @@
     <section class="block" id="activities" aria-labelledby="activities-h">
       <h2 id="activities-h">Skills and activities</h2>
       <div class="tools">
-        <p><span>Robot learning</span> Python, PyTorch, MuJoCo, LeRobot, OpenCV, SO-101</p>
-        <p><span>Data systems</span> PostgreSQL/pgvector, Elasticsearch, Kafka, Linux</p>
+        <p><span>Robot learning</span> Imitation learning, VLA policy adaptation, goal-conditioned retrieval</p>
+        <p><span>Robot experimentation</span> Teleoperation, demonstration collection, simulation and hardware evaluation, SO-101</p>
+        <p><span>ML and simulation tools</span> Python, PyTorch, NumPy, OpenCV, MuJoCo, LeRobot</p>
+        <p><span>Data systems</span> Linux, Kubernetes, Kafka, PostgreSQL/pgvector, Elasticsearch</p>
       </div>
       <article class="entry entry-compact">
         <p class="when">2025 – 2026</p>

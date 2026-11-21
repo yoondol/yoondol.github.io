@@ -1,4 +1,4 @@
-/* Yoonseok Kang, research profile (v113).
+/* Yoonseok Kang, research profile (v114).
    Local fonts: Space Grotesk for headings, Instrument Sans for text.
    site.js adds the nav robot and active-section state; portfolio-motion.js
    runs the one-shot mini robot under the ReuseMem photo. Everything works
@@ -577,7 +577,7 @@ h3 { color: var(--ink); font-size: 1rem; font-weight: 600; line-height: 1.4; }
   padding-block: 1.05rem;
   border-top: 1px solid var(--line);
 }
-h2 + .entry, .tools + .entry, .tero + .entry { border-top: 0; }
+h2 + .entry, .tools + .entry { border-top: 0; }
 h2 + .entry, .tools + .entry { padding-top: 0; }
 .entry-body { display: grid; gap: .25rem; min-width: 0; }
 .entry-body h3 { font: 600 1.04rem/1.4 var(--head); }
@@ -595,19 +595,13 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
 .focus div:first-child { border-left-color: var(--accent); }
 .focus dt { color: var(--ink); font-size: .9rem; font-weight: 650; }
 
-/* TERO: highlighted, with its address in plain view. */
-.tero {
-  margin-bottom: 1rem;
-  padding: 1.3rem 1.5rem 1.35rem;
-  border: 1px solid #cfe1dc;
-  border-radius: var(--radius);
-  background: var(--accent-wash);
+/* Featured entry (TERO): same grid as other entries, with a small inset accent. */
+.entry-featured .entry-body {
+  padding-left: .95rem;
+  box-shadow: inset 2px 0 0 var(--accent);
 }
-.tero h3 { font: 700 1.6rem/1.1 var(--head); letter-spacing: .03em; }
-.tero h3 a { color: var(--ink); text-decoration-color: rgba(20, 34, 53, .3); }
-.tero h3 a:hover { color: var(--accent-deep); text-decoration-color: currentColor; }
-.tero .role { margin-top: .35rem; }
-.tero-copy { max-width: 66ch; margin-top: .65rem; }
+.entry-featured h3 a { color: var(--ink); text-decoration-color: rgba(20, 34, 53, .3); }
+.entry-featured h3 a:hover { color: var(--accent-deep); text-decoration-color: currentColor; }
 
 /* --------------------------------------------------- patents and software */
 
@@ -678,8 +672,6 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
   .lab > h3, .focus { grid-column: 1; }
   .roles li { grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; }
   .roles .when { order: 2; }
-  .tero { padding: 1.1rem 1rem 1.2rem; }
-  .tero h3 { font-size: 1.45rem; }
 }
 
 @media (max-width: 22rem) {
@@ -703,6 +695,6 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
   .page { width: auto; padding: 0; }
   .block { margin-top: 1.75rem; }
   .paper-first::before { box-shadow: none; background: none; }
-  .paper, .entry, .tero, .ip li, .degree { break-inside: avoid; }
+  .paper, .entry, .ip li, .degree { break-inside: avoid; }
   a { color: inherit; text-decoration: none; }
 }

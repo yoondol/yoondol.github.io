@@ -1,0 +1,304 @@
+/* Studio variant. Loaded after ../portfolio.css on <body class="studio">.
+   Cool steel paper, ink navy, saturated blue/cyan, amber for mechanics only.
+   Nav geometry (heights, paddings, lane, bot size) is left untouched. */
+
+body.studio {
+  --bg: #eef2f6;
+  --surface: #fbfcfe;
+  --panel: #e1e7ef;
+  --ink: #0c1a2f;
+  --body: #25324a;
+  --soft: #4f5d76;          /* ~5.9:1 on --bg */
+  --line: #d6dee9;
+  --frame: #b9c6d6;
+  --accent: #1c54c4;        /* ~6.7:1 on white */
+  --accent-deep: #133d93;
+  --accent-bright: #19b3d2;
+  --accent-tint: #d8e4fa;
+  --accent-wash: #e8effb;
+  --amber: #e0962a;
+  --deep: #0b1628;
+  --deep-line: rgba(140, 170, 210, .18);
+  --grid: rgba(28, 84, 196, .055);
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(12, 26, 47, .06), 0 14px 32px -18px rgba(12, 26, 47, .35);
+  background: var(--bg);
+  color: var(--body);
+}
+
+.studio a { text-decoration-color: rgba(28, 84, 196, .35); }
+.studio ::selection { background: var(--accent-tint); }
+
+/* ---------------------------------------------------------- top bar */
+.studio .topbar { background: rgba(238, 242, 246, .9); border-bottom-color: var(--frame); }
+.studio .wordmark { font-weight: 650; }
+.studio .wordmark::before { border-radius: 1px; background: var(--ink); box-shadow: 3px 3px 0 var(--accent-bright); }
+.studio .nav-list {
+  background:
+    repeating-linear-gradient(90deg, var(--frame) 0 6px, transparent 6px 12px) left 0 bottom 2px / 100% 2px no-repeat,
+    linear-gradient(var(--accent-wash), var(--accent-wash)) left 0 bottom 0 / 100% 2px no-repeat;
+}
+.studio .nav-list a[aria-current] { box-shadow: inset 0 0 0 1px rgba(28, 84, 196, .2); }
+.studio .bot-shell { fill: var(--accent); }
+.studio .bot-ear { fill: var(--accent-deep); }
+.studio .bot-tip { fill: var(--amber); }
+.studio .bot-light { fill: var(--accent-bright); }
+.studio .bot.is-moving .bot-light { fill: var(--amber); }
+.studio .bot-shadow { fill: rgba(12, 26, 47, .16); }
+
+/* ---------------------------------------------------------- profile */
+/* A framed instrument plate: hairline border, corner brackets, grid wash. */
+.studio .profile {
+  position: relative;
+  padding: 1.75rem;
+  border: 1px solid var(--frame);
+  border-radius: 4px;
+  background:
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--surface);
+}
+.studio .profile::before,
+.studio .profile::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+.studio .profile::before { top: -1px; left: -1px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.studio .profile::after { right: -1px; bottom: -1px; border-right: 2px solid var(--amber); border-bottom: 2px solid var(--amber); }
+.studio .portrait {
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px var(--frame), 0 0 0 5px var(--surface), 0 0 0 6px var(--line);
+}
+.studio h1 { font-weight: 650; letter-spacing: -.035em; }
+.studio .bio { border-top-color: var(--line); }
+.studio .bio::before { width: 2.5rem; background: var(--accent-bright); }
+.studio .profile-links a { border-radius: 6px; background: var(--surface); }
+.studio .profile-links a.cv {
+  border-radius: 6px;
+  border-color: var(--ink);
+  background: var(--ink);
+  box-shadow: 0 6px 16px -10px rgba(12, 26, 47, .8);
+}
+.studio .profile-links a.cv:hover { border-color: var(--accent); background: var(--accent); }
+
+/* ---------------------------------------------------------- sections */
+.studio .block { border-top-color: var(--frame); }
+.studio h2 { font-weight: 650; }
+.studio .block > h2::before { width: 1.25rem; height: 2px; border-radius: 0; background: var(--accent); box-shadow: 1.5rem 0 0 var(--amber); }
+.studio .when { color: var(--accent); }
+
+/* ---------------------------------------------------------- papers */
+.studio .num { color: var(--accent); font-weight: 650; }
+.studio .paper-co .num { color: var(--soft); }
+.studio .cite h3 { color: var(--ink); line-height: 1.38; }
+.studio .cite h3 a:hover { color: var(--accent); }
+
+/* Spotlight: pale steel citation half, deep ink media half. */
+.studio .paper-first::before {
+  border: 1px solid var(--frame);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow), inset 3px 0 0 var(--accent);
+}
+.studio .paper-first .cite h3 { font-size: 1.42rem; font-weight: 650; line-height: 1.22; }
+.studio .lead-name { color: var(--accent); }
+.studio .summary { color: var(--body); }
+.studio .links a.cta {
+  border-radius: 6px;
+  background: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 6px 16px -9px rgba(19, 61, 147, .8);
+}
+.studio .links a.cta:hover { background: var(--accent-deep); }
+.studio .links a.chip { border-radius: 6px; border-color: var(--frame); background: var(--surface); }
+.studio .links a.chip:hover { border-color: var(--accent); color: var(--accent-deep); }
+
+.studio .spot-fig {
+  padding: .65rem;
+  border-radius: 10px;
+  background: var(--deep);
+  box-shadow: 0 18px 36px -22px rgba(11, 22, 40, .9);
+}
+.studio .spot-image { border-radius: 6px; }
+.studio .spot-image:focus-visible { outline: 3px solid var(--accent-bright); outline-offset: 3px; }
+.studio .spot-photo {
+  border-radius: 6px;
+  background: #0f1d34;
+  box-shadow: 0 0 0 1px var(--deep-line);
+}
+
+/* ---------------------------------------------------------- gripper */
+/* One carriage on a gantry: slide, lower, close on the block, lift,
+   traverse, lower, release, rise. Default styles are the final pose. */
+.studio .grip {
+  --t: 3.6s;
+  --a: 22%;
+  --b: 78%;
+  position: relative;
+  height: 108px;
+  margin-top: .65rem;
+  overflow: hidden;
+  border-top: 1px solid var(--deep-line);
+  pointer-events: none;
+}
+.studio .grip span { position: absolute; display: block; }
+.studio .grip-rail {
+  top: 12px; left: 6px; right: 6px; height: 2px;
+  background: rgba(140, 170, 210, .45);
+}
+.studio .grip-floor {
+  bottom: 12px; left: 6px; right: 6px; height: 1px;
+  background: rgba(140, 170, 210, .3);
+}
+.studio .grip-pad {
+  bottom: 10px; width: 30px; height: 3px; border-radius: 1px;
+  transform: translateX(-50%);
+  background: rgba(25, 179, 210, .35);
+}
+.studio .grip-pad-a { left: var(--a); }
+.studio .grip-pad-b { left: var(--b); background: rgba(25, 179, 210, .7); }
+
+.studio .grip-block {
+  z-index: 1;
+  left: var(--b);
+  --ground: 13px;
+  bottom: var(--ground);
+  width: 18px; height: 18px;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  background: var(--amber);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .18);
+}
+.studio .grip-carriage {
+  z-index: 2;
+  top: 8px;
+  left: var(--b);
+  width: 44px;
+  height: 92px;
+  transform: translateX(-50%);
+}
+.studio .grip-trolley {
+  top: 0; left: 4px; right: 4px; height: 10px;
+  border-radius: 2px;
+  background: #d7e0ec;
+  box-shadow: inset 0 -2px 0 #9fb0c6;
+}
+.studio .grip-rod {
+  top: 10px; left: 50%; width: 4px; height: 25px;
+  margin-left: -2px;
+  background: #8fa3bd;
+}
+.studio .grip-hand {
+  top: 35px; left: 50%; width: 40px; height: 23px;
+  transform: translate(-50%, 0);
+}
+.studio .grip-hand::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 5px;
+  border-radius: 1px;
+  background: var(--accent-bright);
+}
+.studio .grip-jaw {
+  top: 5px; width: 5px; height: 18px;
+  border-radius: 0 0 1px 1px;
+  background: #d7e0ec;
+}
+.studio .grip-jaw-l { left: 0; }
+.studio .grip-jaw-r { right: 0; }
+
+/* Armed: JS sets this only when motion is allowed; start pose, paused. */
+.studio .grip.is-armed .grip-carriage { animation: grip-x var(--t) both paused; }
+.studio .grip.is-armed .grip-rod { animation: grip-rod var(--t) both paused; }
+.studio .grip.is-armed .grip-hand { animation: grip-hand var(--t) both paused; }
+.studio .grip.is-armed .grip-jaw-l { animation: grip-jaw-l var(--t) both paused; }
+.studio .grip.is-armed .grip-jaw-r { animation: grip-jaw-r var(--t) both paused; }
+.studio .grip.is-armed .grip-block { animation: grip-block var(--t) both paused; }
+.studio .grip.is-armed.is-run span { animation-play-state: running; }
+
+@keyframes grip-x {
+  0%   { left: 50%; animation-timing-function: cubic-bezier(.45, 0, .25, 1); }
+  18%  { left: var(--a); }
+  54%  { left: var(--a); animation-timing-function: cubic-bezier(.45, 0, .25, 1); }
+  74%  { left: var(--b); }
+  100% { left: var(--b); }
+}
+@keyframes grip-rod {
+  0%, 18% { height: 25px; animation-timing-function: ease-in-out; }
+  30%, 42% { height: 51px; animation-timing-function: ease-in-out; }
+  54%, 74% { height: 25px; animation-timing-function: ease-in-out; }
+  84%, 91% { height: 51px; animation-timing-function: ease-in-out; }
+  100% { height: 25px; }
+}
+@keyframes grip-hand {
+  0%, 18% { transform: translate(-50%, 0); animation-timing-function: ease-in-out; }
+  30%, 42% { transform: translate(-50%, 26px); animation-timing-function: ease-in-out; }
+  54%, 74% { transform: translate(-50%, 0); animation-timing-function: ease-in-out; }
+  84%, 91% { transform: translate(-50%, 26px); animation-timing-function: ease-in-out; }
+  100% { transform: translate(-50%, 0); }
+}
+@keyframes grip-jaw-l {
+  0%, 31% { transform: translateX(0); }
+  39%, 85% { transform: translateX(6px); }
+  91%, 100% { transform: translateX(0); }
+}
+@keyframes grip-jaw-r {
+  0%, 31% { transform: translateX(0); }
+  39%, 85% { transform: translateX(-6px); }
+  91%, 100% { transform: translateX(0); }
+}
+@keyframes grip-block {
+  0%, 42% { left: var(--a); bottom: var(--ground); animation-timing-function: ease-in-out; }
+  54% { left: var(--a); bottom: calc(var(--ground) + 26px); animation-timing-function: cubic-bezier(.45, 0, .25, 1); }
+  74% { left: var(--b); bottom: calc(var(--ground) + 26px); animation-timing-function: ease-in-out; }
+  84%, 100% { left: var(--b); bottom: var(--ground); }
+}
+
+/* ---------------------------------------------------------- education */
+.studio .degree {
+  border-color: var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: inset 0 2px 0 var(--accent-tint);
+}
+.studio .gpa strong { color: var(--ink); }
+
+/* ---------------------------------------------------------- research / work */
+.studio .focus div { border-left-color: var(--line); }
+.studio .focus div:first-child { border-left-color: var(--accent); }
+
+/* TERO as a regular work row with a discreet accent rail. */
+.studio .entry-featured .entry-body {
+  padding-left: .85rem;
+  box-shadow: inset 2px 0 0 var(--accent-bright);
+}
+.studio .entry-featured h3 a { color: var(--ink); text-decoration-color: rgba(12, 26, 47, .3); }
+.studio .entry-featured h3 a:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+/* ---------------------------------------------------------- patents */
+.studio .ip li { border-top-color: var(--line); }
+
+/* ---------------------------------------------------------- small screens */
+@media (max-width: 40rem) {
+  .studio .profile { padding: 1.1rem; }
+  .studio .paper-first .cite h3 { font-size: 1.2rem; }
+  .studio .spot-fig { padding: .5rem; }
+  .studio .grip { --a: 24%; --b: 76%; height: 100px; }
+  .studio .grip-floor { bottom: 8px; }
+  .studio .grip-pad { bottom: 6px; }
+  .studio .grip-block { --ground: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio .grip span { animation: none !important; }
+}
+
+@media print {
+  .studio .grip { display: none; }
+  .studio .profile { border: 0; background: none; padding: 0; }
+  .studio .profile::before, .studio .profile::after { display: none; }
+  .studio .spot-fig { background: none; padding: 0; box-shadow: none; }
+}
