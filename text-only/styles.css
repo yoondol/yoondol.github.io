@@ -1,0 +1,3 @@
+/* Text-only variant: papers without thumbnail columns. Loaded after ../styles.css. */
+.paper { grid-template-columns: 2rem minmax(0, 1fr); column-gap: .75rem; }
+.paper .cite { grid-column: 2; }
