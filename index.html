@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Yoonseok Kang, M.S. researcher at Chung-Ang University studying manipulation policy generalization and data-efficient adaptation in robot learning.">
-  <meta name="theme-color" content="#f5f8f9">
+  <meta name="theme-color" content="#f7f4ee">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yoonseok Kang | Robot Learning">
   <meta property="og:description" content="Robot learning for manipulation, factory data systems, papers and CV.">
@@ -13,9 +13,10 @@
   <link rel="canonical" href="https://yoondol.github.io/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="preload" href="./assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./styles.css?v=110">
+  <link rel="preload" href="./assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./portfolio.css?v=113">
   <script src="./site.js" defer></script>
+  <script src="./portfolio-motion.js?v=113" defer></script>
   <title>Yoonseok Kang | Robot Learning</title>
 </head>
 <body id="top">
@@ -78,11 +79,11 @@
         <h1 id="name">Yoonseok Kang</h1>
         <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
         <div class="bio">
-          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a> on robot learning. I study how manipulation policies can handle new goals and adapt from limited feedback.</p>
-          <p>Before robot learning, I worked on distributed search on edge clusters and built sensor data systems in an operating food factory.</p>
+          <p class="bio-lead">I study how robots can use <strong>past experience</strong> to handle new goals and adapt with limited feedback.</p>
+          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>. My background is in building sensor data systems for an operating food factory and studying distributed search on resource-constrained edge clusters.</p>
         </div>
         <ul class="profile-links" aria-label="Contact and profiles">
-          <li><a href="./assets/Yoonseok_Kang_CV.pdf?v=109"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
+          <li><a class="cv" href="./assets/Yoonseok_Kang_CV.pdf?v=113"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
           <li><a href="mailto:kangcl1609@cau.ac.kr"><img src="./assets/icons/envelope.svg" alt="" width="16" height="16">Email</a></li>
           <li><a href="https://github.com/yoondol"><img src="./assets/icons/github.svg" alt="" width="16" height="16">GitHub</a></li>
           <li><a href="https://www.linkedin.com/in/yoonseokkang/"><img src="./assets/icons/linkedin.svg" alt="" width="16" height="16">LinkedIn</a></li>
@@ -95,23 +96,35 @@
       <ol class="papers">
         <li class="paper paper-first" id="reusemem">
           <span class="num">1</span>
-          <a class="thumb" href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
-            <img src="./assets/figures/reusemem-hardware.webp" width="1440" height="810" alt="ReuseMem real-robot setup: hardware used for the SO-101 arm experiments">
-          </a>
-          <div class="cite">
-            <h3><a href="https://yoondol.github.io/reusemem/"><span class="lead-name">ReuseMem</span>: One Memory, Multiple Goals in Robot Manipulation</a></h3>
-            <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
-            <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
-            <p class="summary">I built ReuseMem to test whether a robot can use one recording for different requests given later. I trained a goal-conditioned retriever to select sets of observations that help predict expert actions, and built a learned adapter that combines them with the current scene for a frozen policy. In simulation, I compared learned retrieval against evenly spaced frames at the same memory budget. I also tested it on a physical SO-101 arm.</p>
-            <p class="links"><a class="cta" href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
+          <div class="spot">
+            <div class="cite">
+              <h3><a href="https://yoondol.github.io/reusemem/"><span class="lead-name">ReuseMem</span>: One Memory, Multiple Goals in Robot Manipulation</a></h3>
+              <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
+              <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
+              <p class="summary">I built ReuseMem to let a robot act on new requests using a recording made before it knew the task. I trained the retriever to select observations that help predict expert actions, then built an adapter that combines them with the live scene for a frozen policy. I compared learned retrieval with evenly spaced frames at the same memory budget in simulation and tested it on an SO-101 arm.</p>
+              <p class="links"><a class="cta" href="https://yoondol.github.io/reusemem/">Project page<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a><a class="chip" href="https://arxiv.org/abs/2611.21115">arXiv</a><a class="chip" href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
+            </div>
+            <figure class="spot-fig">
+              <a class="spot-image" href="https://yoondol.github.io/reusemem/"><img class="spot-photo" src="./assets/figures/reusemem-hardware.webp" width="1440" height="810" alt="ReuseMem project page: SO-101 arm setup used in the real-robot experiments"></a>
+              <div class="spot-track" aria-hidden="true">
+                <svg class="mini" viewBox="0 0 36 30" focusable="false">
+                  <path class="bot-antenna" d="M18 6V3"/>
+                  <circle class="bot-tip" cx="18" cy="2.4" r="1.9"/>
+                  <rect class="bot-shell" x="6" y="5.4" width="24" height="14.4" rx="5.4"/>
+                  <rect class="bot-visor" x="8.6" y="8" width="18.8" height="9.2" rx="4"/>
+                  <ellipse class="bot-eye" cx="14" cy="12.6" rx="2.2" ry="2.6"/>
+                  <ellipse class="bot-eye" cx="22" cy="12.6" rx="2.2" ry="2.6"/>
+                  <rect class="bot-chassis" x="8" y="20.8" width="20" height="8.2" rx="4.1"/>
+                  <circle class="bot-hub" cx="12.6" cy="24.9" r="1.8"/>
+                  <circle class="bot-hub" cx="23.4" cy="24.9" r="1.8"/>
+                </svg>
+              </div>
+            </figure>
           </div>
         </li>
 
         <li class="paper" id="odff">
           <span class="num">2</span>
-          <a class="thumb" href="https://doi.org/10.3390/systems14050515" aria-label="Systems paper on the Operational Data Foundation Framework">
-            <img src="./assets/figures/odff-fig6.webp" alt="Figure 6: LoRaWAN devices connecting through Raspberry Pi edge software to the cloud" loading="lazy">
-          </a>
           <div class="cite">
             <h3><a href="https://doi.org/10.3390/systems14050515">Operational Data Foundation Framework for Smart Manufacturing in SMEs: Field Implementation and Evaluation</a></h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
@@ -122,7 +135,6 @@
 
         <li class="paper" id="iiot">
           <span class="num">3</span>
-          <div class="thumb"><img src="./assets/figures/iiot-fig3b.webp" alt="Figure 3(b) from the paper: Phase 3 factory floor plan with two LoRaWAN gateways and sensor-to-gateway paths across both buildings" width="1100" height="671" loading="lazy"></div>
           <div class="cite">
             <h3>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</p>
@@ -132,7 +144,6 @@
 
         <li class="paper" id="edgesearch">
           <span class="num">4</span>
-          <div class="thumb"><img src="./assets/figures/edgesearch-fig6.webp" alt="Figure 6 from the EdgeSearch manuscript: five cluster role topologies and the measured data flow between the source, coordinator nodes and data nodes" width="1250" height="475" loading="lazy"></div>
           <div class="cite">
             <h3>Characterization of Distributed Search on Resource-Constrained Edge Clusters</h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
@@ -142,9 +153,6 @@
 
         <li class="paper" id="elasticsearch">
           <span class="num">5</span>
-          <a class="thumb" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094" aria-label="Journal of Platform Technology paper on Elasticsearch">
-            <img src="./assets/figures/elasticsearch-alternate.webp" alt="Figure 10: indexing and search times before and after optimization" loading="lazy">
-          </a>
           <div class="cite">
             <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
@@ -155,7 +163,6 @@
 
         <li class="paper paper-co" id="sbc-egpu">
           <span class="num">6</span>
-          <a class="thumb" href="https://doi.org/10.1109/ACCESS.2026.3722613" aria-label="IEEE Access paper on SBC and eGPU integration"><img src="./assets/figures/sbc-egpu-fig1.webp" alt="Figure 1 from the paper: hardware setup with a Raspberry Pi 5B, uPCIty HAT, external GPU, and separate power supply" width="620" height="342" loading="lazy"></a>
           <div class="cite">
             <h3><a href="https://doi.org/10.1109/ACCESS.2026.3722613">New Possibilities: Integrating an SBC With an eGPU for Small- to Medium-Scale LLMs</a></h3>
             <p class="authors">Yeongmo Lee, Wonjib Kim, Dayeon Jung, Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dongchul Park</p>
@@ -166,7 +173,6 @@
 
         <li class="paper paper-co" id="radar">
           <span class="num">7</span>
-          <div class="thumb"><img src="./assets/figures/radar-fig2.webp" alt="Figure 2 from the Radar manuscript: overview of the self-tuning Hadoop framework for low-power clusters" loading="lazy"></div>
           <div class="cite">
             <h3>Radar: A comprehensive self-tuning Hadoop framework for low power clusters</h3>
             <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Yeongmo Lee, Dongchul Park</p>
@@ -176,7 +182,6 @@
 
         <li class="paper paper-co" id="hat">
           <span class="num">8</span>
-          <div class="thumb"><img src="./assets/figures/hat-fig2.webp" alt="Figure 2 from the HAT manuscript: binary tree scheduler for Hadoop on heterogeneous edge clusters" loading="lazy"></div>
           <div class="cite">
             <h3>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</h3>
             <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Wonjib Kim, Dongchul Park</p>
@@ -186,7 +191,6 @@
 
         <li class="paper paper-co" id="pipp">
           <span class="num">9</span>
-          <div class="thumb"><img src="./assets/figures/pipp-fig2.webp" alt="Figure 2 from the PiPP manuscript: pipeline-parallel LLM inference across a low-cost SBC cluster" loading="lazy"></div>
           <div class="cite">
             <h3>PiPP: A Pipeline-Parallel Distributed LLM Inference Platform for Low Cost SBC Clusters</h3>
             <p class="authors">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Dongchul Park</p>
@@ -196,7 +200,6 @@
 
         <li class="paper paper-co" id="tide">
           <span class="num">10</span>
-          <div class="thumb"><img src="./assets/figures/tide-fig1.webp" alt="Figure 1 from the TIDE manuscript: distributed LLM prefill on a low-cost SBC cluster" loading="lazy"></div>
           <div class="cite">
             <h3>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</h3>
             <p class="authors">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Seungmin Rho, Dongchul Park</p>
@@ -314,7 +317,7 @@
   </main>
 
   <footer class="foot">
-    <p>Portrait courtesy of the Data Computing Systems Lab. Paper figures are reproduced from the linked papers, the ReuseMem project page, and author manuscripts. The eGPU figure is from Lee et al., <cite>IEEE Access</cite>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+    <p>Portrait courtesy of the Data Computing Systems Lab. ReuseMem SO-101 setup photo from the <a href="https://yoondol.github.io/reusemem/">ReuseMem project page</a>.</p>
   </footer>
 </body>
 </html>
