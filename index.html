@@ -14,7 +14,7 @@
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="preload" href="./assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./styles.css?v=107">
+  <link rel="stylesheet" href="./styles.css?v=108">
   <script src="./site.js" defer></script>
   <title>Yoonseok Kang | Robot Learning</title>
 </head>
@@ -39,7 +39,6 @@
             <li><a href="#industry">Industry</a></li>
             <li><a href="#patents">Patents</a></li>
             <li><a href="#activities">Activities</a></li>
-            <li class="nav-cv"><a href="./assets/Yoonseok_Kang_CV.pdf?v=107"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
           </ul>
           <span class="bot" aria-hidden="true">
             <svg viewBox="0 0 36 30" focusable="false">
@@ -73,37 +72,22 @@
   </header>
 
   <main id="content" class="page">
-    <section class="hero" id="about" aria-labelledby="name">
-      <div class="hero-text">
-        <div class="id">
-          <img class="portrait" src="./assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
-          <div>
-            <h1 id="name">Yoonseok Kang</h1>
-            <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
-          </div>
-        </div>
-        <p class="lede">I study how robot manipulation policies generalize to new goals and adapt from limited feedback.</p>
-        <ul class="actions" aria-label="Contact and profiles">
-          <li><a class="act act-cv" href="./assets/Yoonseok_Kang_CV.pdf?v=107"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV (PDF)</a></li>
-          <li><a class="act" href="mailto:kangcl1609@cau.ac.kr"><img src="./assets/icons/envelope.svg" alt="" width="16" height="16"><span><span class="sr">Email: </span>kangcl1609@cau.ac.kr</span></a></li>
-          <li><a class="act" href="https://github.com/yoondol"><img src="./assets/icons/github.svg" alt="" width="16" height="16">GitHub</a></li>
-          <li><a class="act" href="https://www.linkedin.com/in/yoonseokkang/"><img src="./assets/icons/linkedin.svg" alt="" width="16" height="16">LinkedIn</a></li>
-          <li><a class="act" href="https://orcid.org/0009-0003-4190-193X">ORCID</a></li>
-        </ul>
+    <section class="profile" id="about" aria-labelledby="name">
+      <img class="portrait" src="./assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
+      <div class="profile-text">
+        <h1 id="name">Yoonseok Kang</h1>
+        <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
         <div class="bio">
-          <p>Before robot learning, I built data systems in an operating food factory, diagnosing why sensor readings went missing or could not be trusted and validating fixes under field constraints. I now work with my advisor <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a> on robot learning experiments evaluated on real hardware.</p>
+          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a> on robot learning. I study how manipulation policies can handle new goals and adapt from limited feedback.</p>
+          <p>Before robot learning, I worked on distributed search on edge clusters and built sensor data systems in an operating food factory.</p>
         </div>
+        <ul class="profile-links" aria-label="Contact and profiles">
+          <li><a href="./assets/Yoonseok_Kang_CV.pdf?v=108"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
+          <li><a href="mailto:kangcl1609@cau.ac.kr"><img src="./assets/icons/envelope.svg" alt="" width="16" height="16">Email</a></li>
+          <li><a href="https://github.com/yoondol"><img src="./assets/icons/github.svg" alt="" width="16" height="16">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/yoonseokkang/"><img src="./assets/icons/linkedin.svg" alt="" width="16" height="16">LinkedIn</a></li>
+        </ul>
       </div>
-
-      <aside class="feature" aria-labelledby="feature-h">
-        <p class="feature-tag">Featured research</p>
-        <a class="feature-fig" href="https://yoondol.github.io/reusemem/">
-          <img src="./assets/figures/reusemem-hardware.webp" width="1440" height="810" alt="ReuseMem real-robot setup: hardware setup used for the SO-101 arm experiments">
-        </a>
-        <h2 id="feature-h"><a href="https://yoondol.github.io/reusemem/">ReuseMem: One Memory, Multiple Goals in Robot Manipulation</a></h2>
-        <p>A robot records what it sees before it knows the task. ReuseMem learns a goal-conditioned retriever that selects useful past observations and passes them through a small learned interface to a frozen policy backbone, tested in simulation and on an SO-101 arm.</p>
-        <p class="feature-links"><a href="https://yoondol.github.io/reusemem/">Project page<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a><a href="https://arxiv.org/abs/2611.21115">arXiv<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a></p>
-      </aside>
     </section>
 
     <section class="block" id="papers" aria-labelledby="papers-h">
@@ -111,14 +95,17 @@
       <ol class="papers">
         <li class="paper paper-first" id="reusemem">
           <span class="num">1</span>
-          <a class="thumb" href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
-            <img src="./assets/figures/reusemem-fig1.webp" alt="ReuseMem Figure 1: one recording made before any request supports two later goals, identifying the USB case and restoring it to its original position" width="792" height="325">
-          </a>
           <div class="cite">
-            <h3><a href="https://yoondol.github.io/reusemem/">ReuseMem: One Memory, Multiple Goals in Robot Manipulation</a></h3>
-            <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
-            <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
-            <p class="links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
+            <div class="feature-body">
+              <h3><a href="https://yoondol.github.io/reusemem/">ReuseMem: One Memory, Multiple Goals in Robot Manipulation</a></h3>
+              <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
+              <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
+              <p class="summary">Can a robot use one recording for several goals specified later? ReuseMem retrieves the observations relevant to each goal and feeds them to a frozen policy through a learned adapter. We evaluate it in simulation and on an SO-101 arm.</p>
+              <p class="links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
+            </div>
+            <a class="feature-fig" href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
+              <img src="./assets/figures/reusemem-hardware.webp" width="1440" height="810" alt="ReuseMem real-robot setup: hardware setup used for the SO-101 arm experiments">
+            </a>
           </div>
         </li>
 
@@ -147,7 +134,7 @@
 
         <li class="paper" id="edgesearch">
           <span class="num">4</span>
-          <div class="thumb"><img src="./assets/figures/edgesearch.webp" alt="Physical topology of the EdgeSearch single-board computer cluster" loading="lazy"></div>
+          <div class="thumb"><img src="./assets/figures/edgesearch-fig6.webp" alt="Figure 6 from the EdgeSearch manuscript: five cluster role topologies and the measured data flow between the source, coordinator nodes and data nodes" width="1250" height="475" loading="lazy"></div>
           <div class="cite">
             <h3>Characterization of Distributed Search on Resource-Constrained Edge Clusters</h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
@@ -179,19 +166,8 @@
           </div>
         </li>
 
-        <li class="paper paper-co" id="kcc">
-          <span class="num">7</span>
-          <div class="thumb thumb-empty" aria-hidden="true"></div>
-          <div class="cite">
-            <h3>Search Performance Optimization of Log Data on Elasticsearch</h3>
-            <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Yeongmo Lee, Dayeon Jung, Dongchul Park</p>
-            <p class="venue"><cite>Korea Computer Congress</cite>, 2025.</p>
-            <p class="links"><a href="https://www.kiise.or.kr/conference02/data/kcc2025/PB.pdf#page=107">Program</a></p>
-          </div>
-        </li>
-
         <li class="paper paper-co" id="radar">
-          <span class="num">8</span>
+          <span class="num">7</span>
           <div class="thumb"><img src="./assets/figures/radar-fig2.webp" alt="Figure 2 from the Radar manuscript: overview of the self-tuning Hadoop framework for low-power clusters" loading="lazy"></div>
           <div class="cite">
             <h3>Radar: A comprehensive self-tuning Hadoop framework for low power clusters</h3>
@@ -201,7 +177,7 @@
         </li>
 
         <li class="paper paper-co" id="hat">
-          <span class="num">9</span>
+          <span class="num">8</span>
           <div class="thumb"><img src="./assets/figures/hat-fig2.webp" alt="Figure 2 from the HAT manuscript: binary tree scheduler for Hadoop on heterogeneous edge clusters" loading="lazy"></div>
           <div class="cite">
             <h3>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</h3>
@@ -211,7 +187,7 @@
         </li>
 
         <li class="paper paper-co" id="pipp">
-          <span class="num">10</span>
+          <span class="num">9</span>
           <div class="thumb"><img src="./assets/figures/pipp-fig2.webp" alt="Figure 2 from the PiPP manuscript: pipeline-parallel LLM inference across a low-cost SBC cluster" loading="lazy"></div>
           <div class="cite">
             <h3>PiPP: A Pipeline-Parallel Distributed LLM Inference Platform for Low Cost SBC Clusters</h3>
@@ -221,7 +197,7 @@
         </li>
 
         <li class="paper paper-co" id="tide">
-          <span class="num">11</span>
+          <span class="num">10</span>
           <div class="thumb"><img src="./assets/figures/tide-fig1.webp" alt="Figure 1 from the TIDE manuscript: distributed LLM prefill on a low-cost SBC cluster" loading="lazy"></div>
           <div class="cite">
             <h3>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</h3>
@@ -262,9 +238,9 @@
           <li><span class="when">2024 – 2025</span><span class="role-name">Undergraduate Researcher</span></li>
         </ul>
         <dl class="focus">
-          <div><dt>Robot manipulation</dt><dd>Asked whether one recording, made before the task is known, can serve different later goals. Built ReuseMem around that question and designed its simulated and real-arm tests so they isolate what the policy gains from the selected memory.</dd></div>
-          <div><dt>Factory data systems</dt><dd>Designed measurements in an operating food factory that traced lost sensor readings across network, ingestion, and storage logs, diagnosed LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
-          <div><dt>Distributed search</dt><dd>Optimized Elasticsearch for large-scale log data and characterized distributed search on resource-constrained edge clusters.</dd></div>
+          <div><dt>Robot manipulation</dt><dd>Designed the simulated and SO-101 experiments for ReuseMem so they isolate what the policy gains from the selected memory.</dd></div>
+          <div><dt>Factory data systems</dt><dd>Traced lost sensor readings across network, ingestion and storage logs in an operating food factory, diagnosed LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
+          <div><dt>Distributed search</dt><dd>Tuned Elasticsearch indexing and search for log data and measured how node roles shape search on edge clusters.</dd></div>
         </dl>
       </article>
     </section>
@@ -273,13 +249,9 @@
       <h2 id="industry-h">Industry</h2>
 
       <article class="tero" aria-labelledby="tero-h">
-        <div class="tero-head">
-          <h3 id="tero-h"><a href="https://tero.kr/">TERO</a></h3>
-          <a class="tero-url" href="https://tero.kr/">tero.kr<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a>
-        </div>
+        <h3 id="tero-h"><a href="https://tero.kr/">TERO</a></h3>
         <p class="role">Owner and Data Infrastructure Engineer, 2026 – present</p>
-        <p class="tero-copy">I run TERO, a software business for small manufacturers, and build its data infrastructure myself, from sensor and equipment ingestion and edge buffering to monitoring dashboards and operational alerts.</p>
-        <p class="tero-products"><span class="tero-label">Products</span> Factory OS for production and traceability workflows, Edge for equipment signals, and Agent for source-backed retrieval by operators.</p>
+        <p class="tero-copy">A software business for small manufacturers. I build its data infrastructure: sensor and equipment ingestion, edge buffering, monitoring dashboards and operational alerts.</p>
       </article>
 
       <article class="entry">
@@ -287,7 +259,7 @@
         <div class="entry-body">
           <h3>ON LOG, in collaboration with <a href="https://www.ongo-ing.com/en/about">OnGoing Co., Ltd.</a></h3>
           <p class="role">Project Lead</p>
-          <p>Led a sensor-to-dashboard monitoring project for a food and beverage manufacturer, from LoRaWAN sensors and Raspberry Pi edge nodes on the factory floor to Grafana dashboards and alerts.</p>
+          <p>Designed and deployed a fault-tolerant monitoring pipeline for a food and beverage manufacturer, from LoRaWAN field sensors and Raspberry Pi edge nodes to Grafana dashboards and alerts, with readings buffered at the edge during connectivity interruptions.</p>
         </div>
       </article>
 
@@ -296,7 +268,7 @@
         <div class="entry-body">
           <h3>Sprout for <a href="https://sesac.seoul.kr/sesac/introduction/intro.do">SeSAC</a>, in collaboration with <a href="https://www.sba.seoul.kr/">Seoul Business Agency (SBA)</a></h3>
           <p class="role">Project Manager</p>
-          <p>Led a six-person team that built and deployed an education management platform for SBA’s SeSAC program.</p>
+          <p>Took an education management platform from requirements to production, serving the scheduling and announcement workflows of SeSAC trainees and staff.</p>
         </div>
       </article>
     </section>
@@ -328,7 +300,10 @@
 
     <section class="block" id="activities" aria-labelledby="activities-h">
       <h2 id="activities-h">Skills and activities</h2>
-      <p class="tools"><span>Tools</span> Python, PyTorch, MuJoCo, SQL, Elasticsearch, PostgreSQL/pgvector, Kafka, Linux, AWS, LoRaWAN</p>
+      <div class="tools">
+        <p><span>Robot learning</span> Python, PyTorch, MuJoCo, LeRobot, OpenCV, SO-101</p>
+        <p><span>Data systems</span> PostgreSQL/pgvector, Elasticsearch, Kafka, Linux</p>
+      </div>
       <article class="entry entry-compact">
         <p class="when">2025 – 2026</p>
         <div class="entry-body"><h3>BOAZ</h3><p class="role">Data Engineering Member, 24th cohort</p></div>
