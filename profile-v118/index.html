@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yoonseok Kang, a graduate researcher at Chung-Ang University studying robot policy generalization and data-efficient adaptation. Research, publications, and CV.">
+  <meta name="theme-color" content="#f9faf7">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Yoonseok Kang | Robot Learning">
+  <meta property="og:description" content="Robot learning for manipulation, including ReuseMem, a study of how robots can act on different goals from the same experience.">
+  <meta property="og:url" content="https://yoondol.github.io/profile/">
+  <meta property="og:image" content="https://yoondol.github.io/assets/figures/reusemem-hardware.webp">
+  <link rel="canonical" href="https://yoondol.github.io/profile/">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./profile.js" defer></script>
+  <title>Yoonseok Kang | Robot Learning</title>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="site-name" href="#top">Yoonseok Kang</a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a>
+        <a href="#papers">Papers</a>
+        <a href="#experience">Experience</a>
+        <a class="cv-link" href="./Yoonseok_Kang_CV.pdf">CV <span>PDF</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell" tabindex="-1">
+    <section class="intro" aria-labelledby="profile-name">
+      <div class="intro-content">
+        <h1 id="profile-name">Yoonseok Kang</h1>
+        <p class="affiliation">Graduate researcher at <a href="https://bigdata.cau.ac.kr/">Chung-Ang University</a></p>
+        <p class="lead">I study how robots can use past experience to handle new goals and changing scenes.</p>
+        <p class="bio">I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a> in the Data Computing Systems Lab. My interests are policy generalization and data-efficient adaptation for robot manipulation, and my background is in distributed search and manufacturing data systems.</p>
+        <ul class="contact" aria-label="Contact and professional profiles">
+          <li><a href="mailto:kangcl1609@cau.ac.kr"><img src="../assets/icons/envelope.svg" width="16" height="16" alt="">Email</a></li>
+          <li><a href="https://github.com/yoondol"><img src="../assets/icons/github.svg" width="16" height="16" alt="">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/yoonseokkang/"><img src="../assets/icons/linkedin.svg" width="16" height="16" alt="">LinkedIn</a></li>
+        </ul>
+      </div>
+      <img class="portrait" src="../assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-heading">
+      <article class="featured" id="reusemem">
+        <div class="featured-heading">
+          <h2 class="project-topic" id="research-heading">Robot Learning for Memory-Guided Manipulation</h2>
+          <h3><a href="https://yoondol.github.io/reusemem/">ReuseMem<span>One Memory, Multiple Goals in Robot Manipulation</span></a></h3>
+          <p class="byline"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
+          <p class="venue">arXiv preprint, 2026</p>
+          <div class="project-links">
+            <a class="primary-link" href="https://yoondol.github.io/reusemem/">Project and demos</a>
+            <a class="secondary-link" href="https://arxiv.org/abs/2611.21115">Read the paper</a>
+          </div>
+        </div>
+        <figure class="trial">
+          <div class="trial-media">
+            <video aria-label="Real-robot trial showing a case returned to its original position, at twice normal speed" controls muted playsinline preload="none" width="960" height="540" poster="../assets/figures/reusemem-hardware.webp" data-demo>
+              <source src="https://yoondol.github.io/reusemem/assets/real-world/parts/case-goal-3.mp4" type="video/mp4">
+              <a href="https://yoondol.github.io/reusemem/#real-world">Watch the real-robot experiment on the project site</a>
+            </video>
+          </div>
+          <figcaption>
+            <span class="trial-label">Real-robot trial <span class="speed">2× playback</span></span>
+            <span>Return the USB case to the position recorded before it was moved.</span>
+          </figcaption>
+          <p class="video-error" data-video-error hidden>Playback is unavailable here. <a href="https://yoondol.github.io/reusemem/">Open the project demos</a>.</p>
+        </figure>
+        <div class="featured-description">
+          <p>A robot may see where an object is or what a case contains before it knows what it will be asked to do. ReuseMem learns which observations to retrieve from the same history as new goals arrive.</p>
+          <p>I trained the retriever with expert-action prediction and built an adapter that combines past observations with the current scene for a frozen vision-language-action policy. I designed controlled comparisons in simulation and evaluated the method on a physical robot arm.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="papers" aria-labelledby="papers-heading">
+      <div class="section-head">
+        <h2 id="papers-heading">Systems and data papers</h2>
+      </div>
+      <ul class="paper-list">
+        <li>
+          <h3><a href="https://doi.org/10.3390/systems14050515">Operational Data Foundation Framework for Smart Manufacturing in SMEs: Field Implementation and Evaluation</a></h3>
+          <p class="byline"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
+          <p class="venue"><cite>Systems</cite>, 14(5), 515, 2026. <span class="journal-rank">JCR Q1, Top 6%</span></p>
+        </li>
+        <li>
+          <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
+          <p class="byline"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
+          <p class="venue"><cite>Journal of Platform Technology</cite>, 13(5), 24–44, 2025.</p>
+        </li>
+        <li>
+          <h3><a href="https://doi.org/10.1109/ACCESS.2026.3722613">New Possibilities: Integrating an SBC With an eGPU for Small- to Medium-Scale LLMs</a></h3>
+          <p class="byline">Yeongmo Lee, Wonjib Kim, Dayeon Jung, Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dongchul Park</p>
+          <p class="venue"><cite>IEEE Access</cite>, 14, 124414–124429, 2026. <span class="journal-rank">JCR Q2, Top 35%</span><a class="paper-code" href="https://github.com/Data-Computing-Systems-Lab/sbc-egpu-llm">Code</a></p>
+        </li>
+      </ul>
+      <details class="manuscripts">
+        <summary>Manuscripts under review <span>(6)</span></summary>
+        <ul class="paper-list">
+        <li>
+          <h3>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</h3>
+          <p class="byline"><strong>Yoonseok Kang</strong>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</p>
+          <p class="venue">Under review at <cite>Computers in Industry</cite> <span class="journal-rank">JCR Q1, Top 9%</span></p>
+        </li>
+        <li>
+          <h3>Characterization of Distributed Search on Resource-Constrained Edge Clusters</h3>
+          <p class="byline"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
+          <p class="venue">Under review at <cite>IEEE Transactions on Parallel and Distributed Systems</cite> <span class="journal-rank">JCR Q1, Top 13%</span></p>
+        </li>
+        <li>
+          <h3>Radar: A comprehensive self-tuning Hadoop framework for low power clusters</h3>
+          <p class="byline">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Yeongmo Lee, Dongchul Park</p>
+          <p class="venue">Under review at <cite>Scientific Reports</cite> <span class="journal-rank">JCR Q1, Top 14%</span></p>
+        </li>
+        <li>
+          <h3>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</h3>
+          <p class="byline">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Wonjib Kim, Dongchul Park</p>
+          <p class="venue">Under review at <cite>Future Generation Computer Systems</cite> <span class="journal-rank">JCR Q1, Top 12%</span></p>
+        </li>
+        <li>
+          <h3>PiPP: A Pipeline-Parallel Distributed LLM Inference Platform for Low Cost SBC Clusters</h3>
+          <p class="byline">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Dongchul Park</p>
+          <p class="venue">Under review at <cite>IEEE Transactions on Parallel and Distributed Systems</cite> <span class="journal-rank">JCR Q1, Top 13%</span></p>
+        </li>
+        <li>
+          <h3>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</h3>
+          <p class="byline">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Seungmin Rho, Dongchul Park</p>
+          <p class="venue">Under review at <cite>IEEE Transactions on Parallel and Distributed Systems</cite> <span class="journal-rank">JCR Q1, Top 13%</span></p>
+        </li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-heading">
+      <div class="section-head">
+        <h2 id="experience-heading">Experience</h2>
+      </div>
+      <div class="experience">
+        <article class="experience-tero">
+          <p class="duration">2026–present</p>
+          <h3><a href="https://tero.kr/">TERO</a></h3>
+          <p class="role">Owner and Data Infrastructure Engineer</p>
+          <p>I visit manufacturing sites to understand how operators monitor equipment and trace production, then build software that connects machine signals to production and quality records.</p>
+        </article>
+        <div class="experience-list">
+          <article>
+            <p class="duration">2025–2026</p>
+            <h3>ON LOG</h3>
+            <p class="role">Project Lead with <a href="https://www.ongo-ing.com/en/about">OnGoing Co., Ltd.</a></p>
+            <p>Led the design and deployment of AWS-backed monitoring that connects equipment and sensors to real-time dashboards and alerts at an operating factory.</p>
+          </article>
+          <article>
+            <p class="duration">2024–2025</p>
+            <h3>Sprout</h3>
+            <p class="role">Project Manager with <a href="https://www.sba.seoul.kr/">Seoul Business Agency</a></p>
+            <p>Led the team that built and launched the education management platform for <a href="https://sesac.seoul.kr/sesac/introduction/intro.do">SeSAC</a>.</p>
+          </article>
+        </div>
+      </div>
+
+      <article class="lab-experience">
+        <h3><a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a></h3>
+        <p class="role">Graduate researcher, 2025–present<br>Undergraduate researcher, 2024–2025</p>
+        <p>In my systems research, I traced missing sensor readings to wireless interference at an operating factory and measured how node roles affect indexing and search on low-power clusters.</p>
+      </article>
+    </section>
+
+    <section class="section education" aria-labelledby="education-heading">
+      <div class="section-head">
+        <h2 id="education-heading">Education</h2>
+        <p>Chung-Ang University, Seoul</p>
+      </div>
+      <div class="degree-grid">
+        <article>
+          <p class="duration">2025–2027 (expected)</p>
+          <h3>M.S., Department of Security Convergence</h3>
+          <p>GPA 4.50/4.50</p>
+          <p class="role">CAU Graduate Research Scholarship</p>
+        </article>
+        <article>
+          <p class="duration">2018–2025</p>
+          <h3>B.Eng. in Data Science and B.Ed. in Education</h3>
+          <p>Cumulative GPA 4.15/4.50</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell site-footer">
+    <small>Yoonseok Kang</small>
+    <a href="#top">Back to top</a>
+  </footer>
+</body>
+</html>

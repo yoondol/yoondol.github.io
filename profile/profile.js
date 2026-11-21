@@ -1,11 +1,24 @@
-const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
-const sections = navLinks.map(link => document.querySelector(link.hash));
+// Progressive enhancement only: the page, links, film controls and the
+// manuscripts disclosure all work without this script.
+
+// 1. Mark the section currently in view in the main navigation.
 const header = document.querySelector('.site-header');
+const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+const sections = navLinks.map(link => document.getElementById(link.hash.slice(1)));
 let pendingUpdate = false;
 
 function updateCurrentSection() {
-  const marker = header.getBoundingClientRect().bottom + 40;
-  const active = sections.findLastIndex(section => section.getBoundingClientRect().top <= marker);
+  pendingUpdate = false;
+  const marker = (header ? header.getBoundingClientRect().bottom : 0) + 48;
+  const root = document.documentElement;
+  const atBottom = window.innerHeight + window.scrollY >= root.scrollHeight - 2;
+  let active = -1;
+
+  sections.forEach((section, index) => {
+    if (section && section.getBoundingClientRect().top <= marker) active = index;
+  });
+  // The last section is short, so it may never reach the marker.
+  if (atBottom && active !== -1) active = sections.length - 1;
 
   navLinks.forEach((link, index) => {
     if (index === active) {
@@ -14,7 +27,6 @@ function updateCurrentSection() {
       link.removeAttribute('aria-current');
     }
   });
-  pendingUpdate = false;
 }
 
 function scheduleUpdate() {
@@ -24,12 +36,21 @@ function scheduleUpdate() {
   }
 }
 
-window.addEventListener('scroll', scheduleUpdate, { passive: true });
-window.addEventListener('resize', scheduleUpdate);
-window.addEventListener('pageshow', scheduleUpdate);
-document.fonts.ready.then(scheduleUpdate);
-scheduleUpdate();
+if (navLinks.length) {
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('pageshow', scheduleUpdate);
+  if (document.fonts) document.fonts.ready.then(scheduleUpdate);
+  scheduleUpdate();
+}
 
-const demo = document.querySelector('[data-demo]');
-const demoError = document.querySelector('[data-video-error]');
-demo.addEventListener('error', () => { demoError.hidden = false; }, true);
+// 2. If the overview film cannot load, show the project-page link prominently.
+//    Source errors do not bubble, so listen in the capture phase.
+const film = document.querySelector('[data-film]');
+const filmError = document.querySelector('[data-film-error]');
+
+if (film && filmError) {
+  const showFilmError = () => { filmError.hidden = false; };
+  film.addEventListener('error', showFilmError, true);
+  if (film.error) showFilmError();
+}
