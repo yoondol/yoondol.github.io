@@ -1,0 +1,11 @@
+/* ReuseMem thumbnail extension; loaded after ../text-only/styles.css */
+.paper-first .cite { grid-template-columns: minmax(0, 1fr); }
+.paper-first .thumb { display: block; width: clamp(130px, 45vw, 180px); margin-top: .75rem; line-height: 0; aspect-ratio: auto; }
+.paper-first .cite > .thumb { grid-column: 1; }
+.paper-first .thumb img { display: block; width: 100%; height: auto; padding: 0; object-fit: contain; border-radius: 4px; }
+
+@media (min-width: 44rem) {
+  .paper-first .cite { display: grid; grid-template-columns: minmax(0, 1fr) clamp(175px, 22vw, 220px); column-gap: 1.25rem; align-items: start; }
+  .paper-first .cite > * { grid-column: 1; }
+  .paper-first .cite > .thumb { grid-column: 2; grid-row: 1 / span 5; width: 100%; margin-top: .2rem; }
+}
