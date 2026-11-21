@@ -33,8 +33,10 @@
   --sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --measure: 56rem;
   --gutter: 1.5rem;
-  --lane: 1.4rem;           /* strip under the nav links where the robot rides */
-  --bar: 3.8rem;            /* sticky header height; site.js writes the measured value */
+  --lane: 2.25rem;          /* strip under the nav links where the robot rides */
+  --bot-w: 36px;
+  --bot-h: 30px;
+  --bar: 4.75rem;           /* sticky header height; site.js writes the measured value */
   --move: 560ms;            /* robot travel time; MOVE_MS in site.js matches */
 }
 
@@ -148,17 +150,26 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .nav { min-width: 0; }
 
 /* The track holds the links and the robot. It scrolls sideways on narrow
-   screens, and the robot scrolls with it because it lives inside. */
+   screens, and the robot scrolls with it because it lives inside.
+   The list reserves its own lane below the links, with a faint guide rail,
+   so the robot never sits over a link or its focus ring. */
 .nav-track {
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: .45rem .25rem var(--lane);
+  padding: .45rem .25rem 0;
   scrollbar-width: none;
 }
 .nav-track::-webkit-scrollbar { display: none; }
 
-.nav-list { display: flex; align-items: center; gap: .1rem; width: max-content; }
+.nav-list {
+  display: flex;
+  align-items: flex-start;
+  gap: .1rem;
+  width: max-content;
+  height: calc(1.9rem + var(--lane));
+  background: linear-gradient(var(--line), var(--line)) left 0 bottom 2px / 100% 2px no-repeat;
+}
 .nav-list a {
   display: inline-flex;
   align-items: center;
@@ -174,7 +185,14 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 }
 .nav-list a:hover { background: var(--panel); color: var(--ink); }
 .nav-list a:focus-visible { outline-offset: 1px; }
-.nav-list a[aria-current] { color: var(--ink); }
+/* The section in view: tinted pill with an accent underline, so it reads
+   clearly while scrolling even before the robot arrives. */
+.nav-list a[aria-current] {
+  background: var(--accent-tint);
+  color: var(--accent-deep);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+.nav-list a[aria-current]:hover { background: var(--accent-tint); color: var(--accent-deep); }
 .nav-list .icon { width: .95rem; height: .95rem; }
 .nav-cv { margin-left: .45rem; }
 .nav-cv a { color: var(--accent); font-weight: 600; box-shadow: inset 0 0 0 1px currentColor; }
@@ -185,9 +203,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .bot {
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 1.5rem;
-  height: 1.25rem;
+  bottom: 1px;
+  width: var(--bot-w);
+  height: var(--bot-h);
   pointer-events: none;
   opacity: 0;
   transform: translateX(var(--x, 0px));
@@ -197,12 +215,17 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .bot.is-still { transition: none; }
 .bot svg { display: block; width: 100%; height: 100%; overflow: visible; }
 
-.bot-face { fill: var(--accent); }
-.bot-eye { fill: #fff; }
-.bot-antenna { fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linecap: round; }
+.bot-shell { fill: var(--accent); }
+.bot-ear { fill: var(--accent-deep); }
+.bot-visor { fill: #fff; }
+.bot-eye { fill: var(--accent-deep); }
+.bot-glint { fill: #fff; }
+.bot-antenna { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; }
 .bot-tip { fill: var(--accent); }
-.bot-neck, .bot-tread { fill: var(--ink); }
+.bot-neck, .bot-chassis { fill: var(--ink); }
 .bot-hub { fill: var(--frame); }
+.bot-light { fill: #8fb0ff; }
+.bot-shadow { fill: rgba(13, 19, 33, .14); }
 
 .bot-head, .bot-eyes, .bot-tip { transform-box: fill-box; }
 .bot-head { transform-origin: 50% 100%; transition: transform .38s cubic-bezier(.3, 1.6, .5, 1); }
@@ -212,21 +235,22 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 /* Rises out of the rail once, after site.js has placed it. */
 .bot.is-ready svg { animation: bot-in .45s cubic-bezier(.3, 1.4, .5, 1) both; }
 
-/* Travel burst: lean and look toward the next stop, with a small bounce. */
-.bot.is-moving .bot-rig { animation: bot-roll .14s ease-in-out infinite alternate; }
-.bot.is-moving[data-dir="right"] .bot-head { transform: rotate(9deg); }
-.bot.is-moving[data-dir="left"] .bot-head { transform: rotate(-9deg); }
-.bot.is-moving[data-dir="right"] .bot-eyes { transform: translateX(1.2px); }
-.bot.is-moving[data-dir="left"] .bot-eyes { transform: translateX(-1.2px); }
+/* Travel burst: lean and look toward the next stop, with a few small bobs.
+   The count is fixed, so nothing keeps moving once the robot arrives. */
+.bot.is-moving .bot-rig { animation: bot-roll .14s ease-in-out 4 alternate; }
+.bot.is-moving[data-dir="right"] .bot-head { transform: rotate(8deg); }
+.bot.is-moving[data-dir="left"] .bot-head { transform: rotate(-8deg); }
+.bot.is-moving[data-dir="right"] .bot-eyes { transform: translateX(1.6px); }
+.bot.is-moving[data-dir="left"] .bot-eyes { transform: translateX(-1.6px); }
 
 /* Arrival: one blink and one antenna ping. */
 .bot.is-arriving .bot-eyes { animation: bot-blink .3s ease-in-out .06s; }
 .bot.is-arriving .bot-tip { animation: bot-ping .5s ease-out; }
 
-@keyframes bot-in { from { opacity: 0; transform: translateY(6px); } }
-@keyframes bot-roll { to { transform: translateY(-1.2px); } }
-@keyframes bot-blink { 50% { transform: scaleY(.15); } }
-@keyframes bot-ping { 40% { transform: scale(1.55); } }
+@keyframes bot-in { from { opacity: 0; transform: translateY(8px); } }
+@keyframes bot-roll { to { transform: translateY(-1.6px); } }
+@keyframes bot-blink { 50% { transform: scaleY(.12); } }
+@keyframes bot-ping { 40% { transform: scale(1.5); } }
 
 /* ---------------------------------------------------------------- page */
 
@@ -365,8 +389,8 @@ a.thumb:hover { border-color: var(--accent); }
 .links a { text-decoration: none; }
 .links a:hover { text-decoration: underline; }
 
-/* ReuseMem: title, then the real SO-101 setup across the full panel,
-   then a short summary beside one result. */
+/* ReuseMem: title, then the paper's method overview shown whole on a light
+   panel, then a short summary. */
 .paper-lead {
   margin-bottom: 1.75rem;
   overflow: hidden;
@@ -379,79 +403,24 @@ a.thumb:hover { border-color: var(--accent); }
 .kicker .num { line-height: 1; }
 .lead-head h3 { font: 600 1.5rem/1.18 var(--display); letter-spacing: -.022em; }
 
-.lead-photo {
-  position: relative;
+/* The whole figure, never cropped: natural aspect ratio on white. */
+.lead-figure {
   display: block;
+  padding: 1.25rem 1.6rem;
   border-block: 1px solid var(--line);
-  background: #eef0f2;
+  background: #fff;
 }
-/* 2:1 trims only bare wall and floor; arm, trays and both cases stay whole. */
-.lead-photo img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 42%; }
-.lead-photo:hover img { opacity: .95; }
-/* Viewfinder corner marks. */
-.lead-photo::after {
-  --c: rgba(13, 19, 33, .45);
-  content: "";
-  position: absolute;
-  inset: .9rem;
-  pointer-events: none;
-  background:
-    linear-gradient(var(--c) 0 0) left top / 16px 1.5px,
-    linear-gradient(var(--c) 0 0) left top / 1.5px 16px,
-    linear-gradient(var(--c) 0 0) right top / 16px 1.5px,
-    linear-gradient(var(--c) 0 0) right top / 1.5px 16px,
-    linear-gradient(var(--c) 0 0) left bottom / 16px 1.5px,
-    linear-gradient(var(--c) 0 0) left bottom / 1.5px 16px,
-    linear-gradient(var(--c) 0 0) right bottom / 16px 1.5px,
-    linear-gradient(var(--c) 0 0) right bottom / 1.5px 16px;
-  background-repeat: no-repeat;
-}
+.lead-figure img { width: 100%; height: auto; margin-inline: auto; }
+.lead-figure:hover { background: #fbfcff; }
 
-.lead-detail {
+.lead-text {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: 1.25rem 2.25rem;
-  padding: 1.25rem 1.6rem 1.4rem;
-  font-size: .94rem;
-  line-height: 1.55;
+  gap: .7rem;
+  max-width: 70ch;
+  padding: 1.15rem 1.6rem 1.35rem;
+  font-size: .96rem;
+  line-height: 1.58;
 }
-.lead-text { display: grid; align-content: start; gap: .7rem; }
-.lead-result { display: grid; align-content: start; gap: .75rem; }
-.lead-note { color: var(--soft); font-size: .88rem; }
-
-.result { display: grid; gap: .55rem; padding-block: .1rem .75rem; border-bottom: 1px solid var(--line); }
-.result-label { color: var(--soft); font-size: .8rem; line-height: 1.4; }
-.bar-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas: "name val" "bar bar";
-  gap: .2rem .75rem;
-  align-items: baseline;
-  font-size: .86rem;
-}
-.bar-name { grid-area: name; color: var(--ink); font-weight: 550; }
-.is-base .bar-name { color: var(--soft); font-weight: 450; }
-.bar-val {
-  grid-area: val;
-  color: var(--ink);
-  font: 600 .95rem/1 var(--display);
-  font-variant-numeric: tabular-nums;
-}
-.is-base .bar-val { color: var(--soft); }
-.bar { grid-area: bar; display: block; height: 6px; overflow: hidden; border-radius: 3px; background: var(--panel); }
-.bar-fill {
-  display: block;
-  width: calc(var(--v) * 100%);
-  height: 100%;
-  border-radius: inherit;
-  background: var(--accent);
-  transform-origin: left center;
-}
-.is-base .bar-fill { background: var(--frame); }
-/* One-shot fill when the panel first scrolls into view (site.js). */
-.result.is-armed .bar-fill { transform: scaleX(0); }
-.result.is-in .bar-fill { transform: none; transition: transform .9s cubic-bezier(.25, .8, .25, 1); }
-.result.is-in .is-base .bar-fill { transition-delay: .12s; }
 
 /* ----------------------------------------------------------- education */
 
@@ -553,12 +522,8 @@ h2 + .entry, .tools + .entry { padding-top: 0; border-top: 0; }
   }
 }
 
-@media (max-width: 48rem) {
-  .lead-detail { grid-template-columns: minmax(0, 1fr); }
-}
-
 @media (max-width: 42rem) {
-  :root { --gutter: 1.125rem; }
+  :root { --gutter: 1.125rem; --lane: 2.1rem; --bot-w: 32px; --bot-h: 27px; }
   body { font-size: .97rem; }
   body::before { height: 30rem; background-size: 24px 24px; }
   .page { padding-top: 2rem; }
@@ -579,9 +544,9 @@ h2 + .entry, .tools + .entry { padding-top: 0; border-top: 0; }
   .cite h3 { font-size: 1.02rem; }
   .lead-head { padding: 1rem 1.1rem .9rem; }
   .lead-head h3 { font-size: 1.24rem; }
-  .lead-photo img { aspect-ratio: 16 / 9; object-fit: contain; }
-  .lead-photo::after { inset: .6rem; }
-  .lead-detail { padding: 1rem 1.1rem 1.15rem; }
+  /* Figure runs nearly edge to edge so its labels stay as large as possible. */
+  .lead-figure { padding: .6rem .35rem; }
+  .lead-text { padding: 1rem 1.1rem 1.15rem; }
   .entry, .lab, .roles li { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
   .entry .when { line-height: 1.4; }
   .lab > h3, .focus { grid-column: 1; }
@@ -596,8 +561,7 @@ h2 + .entry, .tools + .entry { padding-top: 0; border-top: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .bot, .bot *, .bar-fill, .nav-list a { transition: none !important; animation: none !important; }
-  .result .bar-fill { transform: none !important; }
+  .bot, .bot *, .nav-list a { transition: none !important; animation: none !important; }
 }
 
 /* --------------------------------------------------------------- print */
@@ -608,6 +572,5 @@ h2 + .entry, .tools + .entry { padding-top: 0; border-top: 0; }
   .page { width: auto; padding: 0; }
   .block { margin-top: 1.75rem; }
   .paper, .entry, .paper-lead, .tero, .ip li { break-inside: avoid; }
-  .result .bar-fill { transform: none; }
   a { color: inherit; text-decoration: none; }
 }

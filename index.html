@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Yoonseok Kang, M.S. researcher at Chung-Ang University working on robot learning for manipulation that draws on prior experience, generalizes to new goals, and adapts with limited feedback.">
+  <meta name="description" content="Yoonseok Kang, M.S. researcher at Chung-Ang University working on robot learning for manipulation that reuses past experience for new goals and adapts from limited feedback.">
   <meta name="theme-color" content="#f1f3f6">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yoonseok Kang | Robot Learning">
@@ -41,21 +41,28 @@
             <li class="nav-cv"><a href="./assets/Yoonseok_Kang_CV.pdf"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
           </ul>
           <span class="bot" aria-hidden="true">
-            <svg viewBox="0 0 24 20" focusable="false">
+            <svg viewBox="0 0 36 30" focusable="false">
+              <ellipse class="bot-shadow" cx="18" cy="29.2" rx="11" ry=".8"/>
               <g class="bot-rig">
                 <g class="bot-head">
-                  <path class="bot-antenna" d="M12 5V2.8"/>
-                  <circle class="bot-tip" cx="12" cy="2" r="1.5"/>
-                  <rect class="bot-face" x="4.5" y="4.6" width="15" height="9" rx="3.4"/>
+                  <path class="bot-antenna" d="M18 6V3"/>
+                  <circle class="bot-tip" cx="18" cy="2.4" r="1.9"/>
+                  <rect class="bot-ear" x="4.2" y="10" width="2.6" height="5.4" rx="1.3"/>
+                  <rect class="bot-ear" x="29.2" y="10" width="2.6" height="5.4" rx="1.3"/>
+                  <rect class="bot-shell" x="6" y="5.4" width="24" height="14.4" rx="5.4"/>
+                  <rect class="bot-visor" x="8.6" y="8" width="18.8" height="9.2" rx="4"/>
                   <g class="bot-eyes">
-                    <circle class="bot-eye" cx="9.4" cy="9.1" r="1.35"/>
-                    <circle class="bot-eye" cx="14.6" cy="9.1" r="1.35"/>
+                    <ellipse class="bot-eye" cx="14" cy="12.6" rx="2.2" ry="2.6"/>
+                    <ellipse class="bot-eye" cx="22" cy="12.6" rx="2.2" ry="2.6"/>
+                    <circle class="bot-glint" cx="14.8" cy="11.6" r=".8"/>
+                    <circle class="bot-glint" cx="22.8" cy="11.6" r=".8"/>
                   </g>
                 </g>
-                <rect class="bot-neck" x="9.5" y="13.3" width="5" height="2.2" rx=".6"/>
-                <rect class="bot-tread" x="5.5" y="15.2" width="13" height="4.6" rx="2.3"/>
-                <circle class="bot-hub" cx="8.3" cy="17.5" r="1"/>
-                <circle class="bot-hub" cx="15.7" cy="17.5" r="1"/>
+                <rect class="bot-neck" x="15.2" y="19.4" width="5.6" height="2" rx=".7"/>
+                <rect class="bot-chassis" x="8" y="20.8" width="20" height="8.2" rx="4.1"/>
+                <circle class="bot-hub" cx="12.6" cy="24.9" r="1.8"/>
+                <circle class="bot-hub" cx="23.4" cy="24.9" r="1.8"/>
+                <circle class="bot-light" cx="18" cy="24.9" r="1"/>
               </g>
             </svg>
           </span>
@@ -69,8 +76,8 @@
       <div class="hero-text">
         <h1 id="name">Yoonseok Kang</h1>
         <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
-        <p class="lede">I study how robots can learn from prior experience, generalize to new goals, and adapt with limited feedback.</p>
-        <p class="bio">I came to robot learning after building and measuring data systems in an operating food factory, where I learned to design comparisons that separate plausible causes of a failure. With my advisor <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>, I now ask which past observations should change what a manipulation policy does next.</p>
+        <p class="lede">I want to understand how a robot can keep working after deployment, using what it has already seen to reach new goals and adapting from limited feedback.</p>
+        <p class="bio">Before robot learning, I built data systems in an operating food factory, where much of the work was designing measurements to find out why sensor readings went missing or could not be trusted. With my advisor <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>, I now bring that habit to robot learning, designing experiments that isolate what a manipulation policy actually gains from its past experience.</p>
         <ul class="contact" aria-label="Contact and profiles">
           <li><a href="mailto:kangcl1609@cau.ac.kr">kangcl1609@cau.ac.kr</a></li>
           <li><a href="https://github.com/yoondol">GitHub</a></li>
@@ -91,37 +98,19 @@
             <h3><a href="https://yoondol.github.io/reusemem/">ReuseMem: One Memory, Multiple Goals in Robot Manipulation</a></h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
           </div>
-          <a class="lead-photo" href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
-            <img src="./assets/figures/reusemem-hardware.webp" alt="SO-101 robot arm on a tabletop workspace with two wooden trays and two storage cases, used in the ReuseMem real-robot scenarios" width="1440" height="810">
+          <a class="lead-figure" href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
+            <img src="./assets/figures/reusemem-overview.webp" alt="ReuseMem architecture diagram (Figure 2): a Writer, a Reader, and the policy" width="1480" height="960">
           </a>
-          <div class="lead-detail">
-            <div class="lead-text">
-              <p>A robot records what it sees before it knows its later goals. ReuseMem trains a goal-conditioned retriever by how much each past observation improves expert-action prediction, then passes the selected observations through a small learned interface to a frozen policy backbone.</p>
-              <p class="links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
-            </div>
-            <div class="lead-result">
-              <div class="result">
-                <p class="result-label">Recordings where both later goals succeeded from independent resets, four simulated tasks</p>
-                <div class="bar-row">
-                  <span class="bar-name">ReuseMem</span>
-                  <span class="bar-val">121/200</span>
-                  <span class="bar"><span class="bar-fill" style="--v: .605"></span></span>
-                </div>
-                <div class="bar-row is-base">
-                  <span class="bar-name">Evenly spaced memory of the same size</span>
-                  <span class="bar-val">72/200</span>
-                  <span class="bar"><span class="bar-fill" style="--v: .36"></span></span>
-                </div>
-              </div>
-              <p class="lead-note">Two controlled scenarios on the SO-101 arm pictured above show one recording serving different later requests.</p>
-            </div>
+          <div class="lead-text">
+            <p>A robot often records what it sees before it knows what it will be asked to do. ReuseMem learns a goal-conditioned retriever that scores each past observation by how much it improves expert-action prediction, then passes the selected observations through a small learned interface to a frozen policy backbone. We test it on four simulated tasks and in two controlled scenarios on an SO-101 arm, where one recording serves different later requests.</p>
+            <p class="links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
           </div>
         </li>
 
         <li class="paper" id="odff">
           <span class="num">2</span>
           <a class="thumb" href="https://doi.org/10.3390/systems14050515" aria-label="Systems paper on the Operational Data Foundation Framework">
-            <img src="./assets/figures/odff.webp" alt="Factory floor plan overlaid with photographs of installed sensors and a Raspberry Pi edge node" width="1002" height="726" loading="lazy">
+            <img src="./assets/figures/odff-fig6.webp" alt="Figure 6: LoRaWAN devices connecting through Raspberry Pi edge software to the cloud" loading="lazy">
           </a>
           <div class="cite">
             <h3><a href="https://doi.org/10.3390/systems14050515">Operational Data Foundation Framework for Smart Manufacturing in SMEs: Field Implementation and Evaluation</a></h3>
@@ -131,16 +120,13 @@
           </div>
         </li>
 
-        <li class="paper" id="elasticsearch">
+        <li class="paper" id="iiot">
           <span class="num">3</span>
-          <a class="thumb" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094" aria-label="Journal of Platform Technology paper on Elasticsearch">
-            <img src="./assets/figures/elasticsearch.webp" alt="Bar charts comparing Elasticsearch search time during concurrent indexing under same-index and cross-index configurations" width="1092" height="332" loading="lazy">
-          </a>
+          <div class="thumb"><img src="./assets/figures/iiot-alternate.webp" alt="Photograph of the legacy packaging machine" loading="lazy"></div>
           <div class="cite">
-            <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
-            <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
-            <p class="venue"><cite>Journal of Platform Technology</cite> 13(5), 24–44, 2025.</p>
-            <p class="links"><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">KCI</a></p>
+            <h3>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</h3>
+            <p class="authors"><strong>Yoonseok Kang</strong>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</p>
+            <p class="venue"><cite>Computers in Industry</cite>. <span class="jcr">JCR Q1, Top 9%</span> <span class="status">(under review)</span></p>
           </div>
         </li>
 
@@ -154,19 +140,22 @@
           </div>
         </li>
 
-        <li class="paper" id="iiot">
+        <li class="paper" id="elasticsearch">
           <span class="num">5</span>
-          <div class="thumb"><img src="./assets/figures/iiot.webp" alt="Field, edge, and cloud architecture of the LoRaWAN and legacy equipment integration" loading="lazy"></div>
+          <a class="thumb" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094" aria-label="Journal of Platform Technology paper on Elasticsearch">
+            <img src="./assets/figures/elasticsearch-alternate.webp" alt="Figure 10: indexing and search times before and after optimization" loading="lazy">
+          </a>
           <div class="cite">
-            <h3>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</h3>
-            <p class="authors"><strong>Yoonseok Kang</strong>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</p>
-            <p class="venue"><cite>Computers in Industry</cite>. <span class="jcr">JCR Q1, Top 9%</span> <span class="status">(under review)</span></p>
+            <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
+            <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
+            <p class="venue"><cite>Journal of Platform Technology</cite> 13(5), 24–44, 2025.</p>
+            <p class="links"><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">KCI</a></p>
           </div>
         </li>
 
         <li class="paper paper-co" id="sbc-egpu">
           <span class="num">6</span>
-          <a class="thumb" href="https://doi.org/10.1109/ACCESS.2026.3722613" aria-label="IEEE Access paper on SBC and eGPU integration"><img src="./assets/figures/sbc-egpu.webp" alt="Average Qwen2.5 32B chat latency across SBC and desktop configurations, plotted from Table 13 of the author manuscript" loading="lazy"></a>
+          <a class="thumb" href="https://doi.org/10.1109/ACCESS.2026.3722613" aria-label="IEEE Access paper on SBC and eGPU integration"><img src="./assets/figures/sbc-egpu-alternate.webp" alt="Simplified diagram of the published setup: Raspberry Pi 5B through a uPCIty HAT to a Radeon RX 7600 XT" loading="lazy"></a>
           <div class="cite">
             <h3><a href="https://doi.org/10.1109/ACCESS.2026.3722613">New Possibilities: Integrating an SBC With an eGPU for Small- to Medium-Scale LLMs</a></h3>
             <p class="authors">Yeongmo Lee, Wonjib Kim, Dayeon Jung, Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dongchul Park</p>
@@ -258,9 +247,9 @@
           <li><span class="when">2024 – 2025</span><span class="role-name">Undergraduate Researcher</span></li>
         </ul>
         <dl class="focus">
-          <div><dt>Robot manipulation</dt><dd>Built ReuseMem and evaluated it in four simulated tasks and two controlled scenarios on an SO-101 arm.</dd></div>
+          <div><dt>Robot manipulation</dt><dd>Asked whether one recording, made before the task is known, can serve different later goals, and designed the simulated and real-arm tests of ReuseMem around that question.</dd></div>
+          <div><dt>Factory data systems</dt><dd>Designed measurements in an operating food factory that traced lost sensor readings across network, ingestion, and storage logs, diagnosed LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
           <div><dt>Distributed search</dt><dd>Optimized Elasticsearch for large-scale log data and characterized distributed search on resource-constrained edge clusters.</dd></div>
-          <div><dt>Factory data systems</dt><dd>Traced lost sensor readings across network, ingestion, and storage logs in an operating food factory, diagnosed LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
         </dl>
       </article>
     </section>
@@ -284,7 +273,7 @@
       <article class="entry">
         <p class="when">2025 – 2026</p>
         <div class="entry-body">
-          <h3>ON LOG, in collaboration with <a href="https://www.ongo-ing.com/en/about">OnGoing</a></h3>
+          <h3>ON LOG, in collaboration with <a href="https://www.ongo-ing.com/en/about">OnGoing Co., Ltd.</a></h3>
           <p class="role">Project Lead</p>
           <p>Led a sensor-to-dashboard monitoring project for a food and beverage manufacturer, from LoRaWAN sensors and Raspberry Pi edge nodes on the factory floor to Grafana dashboards and alerts.</p>
         </div>
@@ -340,7 +329,7 @@
   </main>
 
   <footer class="foot">
-    <p>Portrait courtesy of the Data Computing Systems Lab. Paper images come from the linked papers and author manuscripts.</p>
+    <p>Portrait courtesy of the Data Computing Systems Lab. Paper images come from the linked papers, the ReuseMem project page, and author manuscripts; the eGPU image is a simplified diagram based on the published setup.</p>
   </footer>
 </body>
 </html>

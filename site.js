@@ -1,13 +1,13 @@
 /*
   Small enhancements for the profile page. The page is complete without them.
 
-  1. Active section. The nav link for the section in view gets
-     aria-current="location", and a small decorative robot (aria-hidden,
-     pointer-events: none) rides the strip under the links to that link.
-     It moves only when the active section changes: a short travel burst,
-     then one blink. With reduced motion it jumps without animation.
-
-  2. ReuseMem result bars fill once, the first time they scroll into view.
+  Active section. The nav link for the section in view gets
+  aria-current="location", and a decorative robot (aria-hidden,
+  pointer-events: none, never focusable) rides its own lane under the links
+  to that link. It moves only when the active section changes, whether by
+  scrolling or by a nav click: a short travel with a few bobs, then one
+  blink. Reading in place never moves it. With reduced motion it jumps
+  without animation.
 
   Scroll and resize work goes through one requestAnimationFrame scheduler.
 */
@@ -178,20 +178,5 @@
       update();
       requestAnimationFrame(() => bot.classList.add('is-ready'));
     });
-  }
-
-  // --------------------------------------------- ReuseMem result, one shot
-
-  const result = document.querySelector('.result');
-  if (result && motion.matches && 'IntersectionObserver' in window &&
-      result.getBoundingClientRect().top > window.innerHeight) {
-    // Only armed while still below the fold, so nothing visible ever resets.
-    result.classList.add('is-armed');
-    const observer = new IntersectionObserver((entries) => {
-      if (!entries.some((entry) => entry.isIntersecting)) return;
-      result.classList.add('is-in');
-      observer.disconnect();
-    }, { threshold: 0.6 });
-    observer.observe(result);
   }
 })();
