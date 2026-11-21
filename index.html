@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Yoonseok Kang, M.S. researcher at Chung-Ang University studying manipulation policy generalization and data-efficient adaptation in robot learning.">
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#f5f8f9">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yoonseok Kang | Robot Learning">
   <meta property="og:description" content="Robot learning for manipulation, factory data systems, papers and CV.">
@@ -12,9 +12,9 @@
   <meta property="og:image" content="https://yoondol.github.io/assets/figures/reusemem-hardware.webp">
   <link rel="canonical" href="https://yoondol.github.io/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
-  <link rel="preload" href="./assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" href="./assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./styles.css?v=107">
   <script src="./site.js" defer></script>
   <title>Yoonseok Kang | Robot Learning</title>
 </head>
@@ -39,7 +39,7 @@
             <li><a href="#industry">Industry</a></li>
             <li><a href="#patents">Patents</a></li>
             <li><a href="#activities">Activities</a></li>
-            <li class="nav-cv"><a href="./assets/Yoonseok_Kang_CV.pdf"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
+            <li class="nav-cv"><a href="./assets/Yoonseok_Kang_CV.pdf?v=107"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
           </ul>
           <span class="bot" aria-hidden="true">
             <svg viewBox="0 0 36 30" focusable="false">
@@ -75,42 +75,50 @@
   <main id="content" class="page">
     <section class="hero" id="about" aria-labelledby="name">
       <div class="hero-text">
-        <h1 id="name">Yoonseok Kang</h1>
-        <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
-        <p class="lede">I study how robot manipulation policies generalize to new goals and adapt from limited feedback.</p>
-        <div class="bio">
-          <p>In ReuseMem, I tested whether a single recording made before a task is known can help a robot act on different later requests. I designed the tests in simulation and on an SO-101 arm.</p>
-          <p>Before robot learning, I built data systems in an operating food factory, where much of the work was designing measurements to find out why sensor readings went missing or could not be trusted, then validating fixes under the constraints of a working site. With my advisor <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>, I now design experiments that isolate whether past observations help and evaluate them on real hardware.</p>
+        <div class="id">
+          <img class="portrait" src="./assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
+          <div>
+            <h1 id="name">Yoonseok Kang</h1>
+            <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
+          </div>
         </div>
-        <ul class="contact" aria-label="Contact and profiles">
-          <li><a href="mailto:kangcl1609@cau.ac.kr">kangcl1609@cau.ac.kr</a></li>
-          <li><a href="https://github.com/yoondol">GitHub</a></li>
-          <li><a href="https://orcid.org/0009-0003-4190-193X">ORCID</a></li>
-          <li><a href="https://www.linkedin.com/in/yoonseokkang/">LinkedIn</a></li>
-          <li><a class="cv-link" href="./assets/Yoonseok_Kang_CV.pdf"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV (PDF)</a></li>
+        <p class="lede">I study how robot manipulation policies generalize to new goals and adapt from limited feedback.</p>
+        <ul class="actions" aria-label="Contact and profiles">
+          <li><a class="act act-cv" href="./assets/Yoonseok_Kang_CV.pdf?v=107"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV (PDF)</a></li>
+          <li><a class="act" href="mailto:kangcl1609@cau.ac.kr"><img src="./assets/icons/envelope.svg" alt="" width="16" height="16"><span><span class="sr">Email: </span>kangcl1609@cau.ac.kr</span></a></li>
+          <li><a class="act" href="https://github.com/yoondol"><img src="./assets/icons/github.svg" alt="" width="16" height="16">GitHub</a></li>
+          <li><a class="act" href="https://www.linkedin.com/in/yoonseokkang/"><img src="./assets/icons/linkedin.svg" alt="" width="16" height="16">LinkedIn</a></li>
+          <li><a class="act" href="https://orcid.org/0009-0003-4190-193X">ORCID</a></li>
         </ul>
+        <div class="bio">
+          <p>Before robot learning, I built data systems in an operating food factory, diagnosing why sensor readings went missing or could not be trusted and validating fixes under field constraints. I now work with my advisor <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a> on robot learning experiments evaluated on real hardware.</p>
+        </div>
       </div>
-      <img class="portrait" src="./assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
+
+      <aside class="feature" aria-labelledby="feature-h">
+        <p class="feature-tag">Featured research</p>
+        <a class="feature-fig" href="https://yoondol.github.io/reusemem/">
+          <img src="./assets/figures/reusemem-hardware.webp" width="1440" height="810" alt="ReuseMem real-robot setup: hardware setup used for the SO-101 arm experiments">
+        </a>
+        <h2 id="feature-h"><a href="https://yoondol.github.io/reusemem/">ReuseMem: One Memory, Multiple Goals in Robot Manipulation</a></h2>
+        <p>A robot records what it sees before it knows the task. ReuseMem learns a goal-conditioned retriever that selects useful past observations and passes them through a small learned interface to a frozen policy backbone, tested in simulation and on an SO-101 arm.</p>
+        <p class="feature-links"><a href="https://yoondol.github.io/reusemem/">Project page<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a><a href="https://arxiv.org/abs/2611.21115">arXiv<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a></p>
+      </aside>
     </section>
 
     <section class="block" id="papers" aria-labelledby="papers-h">
       <h2 id="papers-h">Papers</h2>
       <ol class="papers">
-        <li class="paper-lead" id="reusemem">
-          <div class="lead-head">
-            <p class="kicker"><span class="num">1</span><span><cite>arXiv</cite> preprint, 2026</span></p>
+        <li class="paper paper-first" id="reusemem">
+          <span class="num">1</span>
+          <a class="thumb" href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
+            <img src="./assets/figures/reusemem-fig1.webp" alt="ReuseMem Figure 1: one recording made before any request supports two later goals, identifying the USB case and restoring it to its original position" width="792" height="325">
+          </a>
+          <div class="cite">
             <h3><a href="https://yoondol.github.io/reusemem/">ReuseMem: One Memory, Multiple Goals in Robot Manipulation</a></h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
-          </div>
-          <figure class="lead-figure">
-            <a href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
-              <img src="./assets/figures/reusemem-fig1.webp" alt="ReuseMem Figure 1: one recording made before any request supports two later goals, identifying the USB case and restoring it to its original position" width="792" height="325">
-            </a>
-            <figcaption><span>Fig. 1</span> The case contents are recorded before any request. Later requests with different goals read the same memory.</figcaption>
-          </figure>
-          <div class="lead-text">
-            <p>A robot often records what it sees before it knows what it will be asked to do. ReuseMem learns a goal-conditioned retriever that scores each past observation by how much it improves expert-action prediction, then passes the selected observations through a small learned interface to a frozen policy backbone. It is tested on four simulated tasks and in two controlled scenarios on an SO-101 arm.</p>
-            <p class="links lead-links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
+            <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
+            <p class="links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
           </div>
         </li>
 
@@ -182,19 +190,9 @@
           </div>
         </li>
 
-        <li class="paper paper-co" id="hat">
-          <span class="num">8</span>
-          <div class="thumb thumb-empty" aria-hidden="true"></div>
-          <div class="cite">
-            <h3>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</h3>
-            <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Wonjib Kim, Dongchul Park</p>
-            <p class="venue"><cite>Future Generation Computer Systems</cite>. <span class="jcr">JCR Q1, Top 12%</span> <span class="status">(under review)</span></p>
-          </div>
-        </li>
-
         <li class="paper paper-co" id="radar">
-          <span class="num">9</span>
-          <div class="thumb thumb-empty" aria-hidden="true"></div>
+          <span class="num">8</span>
+          <div class="thumb"><img src="./assets/figures/radar-fig2.webp" alt="Figure 2 from the Radar manuscript: overview of the self-tuning Hadoop framework for low-power clusters" loading="lazy"></div>
           <div class="cite">
             <h3>Radar: A comprehensive self-tuning Hadoop framework for low power clusters</h3>
             <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Yeongmo Lee, Dongchul Park</p>
@@ -202,22 +200,32 @@
           </div>
         </li>
 
-        <li class="paper paper-co" id="tide">
-          <span class="num">10</span>
-          <div class="thumb thumb-empty" aria-hidden="true"></div>
+        <li class="paper paper-co" id="hat">
+          <span class="num">9</span>
+          <div class="thumb"><img src="./assets/figures/hat-fig2.webp" alt="Figure 2 from the HAT manuscript: binary tree scheduler for Hadoop on heterogeneous edge clusters" loading="lazy"></div>
           <div class="cite">
-            <h3>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</h3>
-            <p class="authors">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Seungmin Rho, Dongchul Park</p>
-            <p class="venue"><cite>IEEE Transactions on Parallel and Distributed Systems</cite>. <span class="jcr">JCR Q1, Top 13%</span> <span class="status">(under review)</span></p>
+            <h3>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</h3>
+            <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Wonjib Kim, Dongchul Park</p>
+            <p class="venue"><cite>Future Generation Computer Systems</cite>. <span class="jcr">JCR Q1, Top 12%</span> <span class="status">(under review)</span></p>
           </div>
         </li>
 
         <li class="paper paper-co" id="pipp">
-          <span class="num">11</span>
-          <div class="thumb thumb-empty" aria-hidden="true"></div>
+          <span class="num">10</span>
+          <div class="thumb"><img src="./assets/figures/pipp-fig2.webp" alt="Figure 2 from the PiPP manuscript: pipeline-parallel LLM inference across a low-cost SBC cluster" loading="lazy"></div>
           <div class="cite">
             <h3>PiPP: A Pipeline-Parallel Distributed LLM Inference Platform for Low Cost SBC Clusters</h3>
             <p class="authors">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Dongchul Park</p>
+            <p class="venue"><cite>IEEE Transactions on Parallel and Distributed Systems</cite>. <span class="jcr">JCR Q1, Top 13%</span> <span class="status">(under review)</span></p>
+          </div>
+        </li>
+
+        <li class="paper paper-co" id="tide">
+          <span class="num">11</span>
+          <div class="thumb"><img src="./assets/figures/tide-fig1.webp" alt="Figure 1 from the TIDE manuscript: distributed LLM prefill on a low-cost SBC cluster" loading="lazy"></div>
+          <div class="cite">
+            <h3>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</h3>
+            <p class="authors">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Seungmin Rho, Dongchul Park</p>
             <p class="venue"><cite>IEEE Transactions on Parallel and Distributed Systems</cite>. <span class="jcr">JCR Q1, Top 13%</span> <span class="status">(under review)</span></p>
           </div>
         </li>
