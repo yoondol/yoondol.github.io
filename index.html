@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Yoonseok Kang, M.S. researcher at Chung-Ang University working on robot learning for manipulation that reuses past experience for new goals and adapts from limited feedback.">
-  <meta name="theme-color" content="#f1f3f6">
+  <meta name="description" content="Yoonseok Kang, M.S. researcher at Chung-Ang University studying manipulation policy generalization and data-efficient adaptation in robot learning.">
+  <meta name="theme-color" content="#f7f5f0">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yoonseok Kang | Robot Learning">
   <meta property="og:description" content="Robot learning for manipulation, factory data systems, papers and CV.">
@@ -12,8 +12,8 @@
   <meta property="og:image" content="https://yoondol.github.io/assets/figures/reusemem-hardware.webp">
   <link rel="canonical" href="https://yoondol.github.io/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
+  <link rel="preload" href="./assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./styles.css">
   <script src="./site.js" defer></script>
   <title>Yoonseok Kang | Robot Learning</title>
@@ -23,6 +23,7 @@
 
   <svg class="sprite" aria-hidden="true" focusable="false">
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7.5 10.8 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M8 16 16.5 7.5"/><path d="M9.5 7.5h7v7"/></symbol>
   </svg>
 
   <header class="topbar">
@@ -76,8 +77,11 @@
       <div class="hero-text">
         <h1 id="name">Yoonseok Kang</h1>
         <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
-        <p class="lede">I want to understand how a robot can keep working after deployment, using what it has already seen to reach new goals and adapting from limited feedback.</p>
-        <p class="bio">Before robot learning, I built data systems in an operating food factory, where much of the work was designing measurements to find out why sensor readings went missing or could not be trusted. With my advisor <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>, I now bring that habit to robot learning, designing experiments that isolate what a manipulation policy actually gains from its past experience.</p>
+        <p class="lede">I study how robot manipulation policies generalize to new goals and adapt from limited feedback.</p>
+        <div class="bio">
+          <p>In ReuseMem, I tested whether a single recording made before a task is known can help a robot act on different later requests. I designed the tests in simulation and on an SO-101 arm.</p>
+          <p>Before robot learning, I built data systems in an operating food factory, where much of the work was designing measurements to find out why sensor readings went missing or could not be trusted, then validating fixes under the constraints of a working site. With my advisor <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>, I now design experiments that isolate whether past observations help and evaluate them on real hardware.</p>
+        </div>
         <ul class="contact" aria-label="Contact and profiles">
           <li><a href="mailto:kangcl1609@cau.ac.kr">kangcl1609@cau.ac.kr</a></li>
           <li><a href="https://github.com/yoondol">GitHub</a></li>
@@ -98,12 +102,15 @@
             <h3><a href="https://yoondol.github.io/reusemem/">ReuseMem: One Memory, Multiple Goals in Robot Manipulation</a></h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
           </div>
-          <a class="lead-figure" href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
-            <img src="./assets/figures/reusemem-overview.webp" alt="ReuseMem architecture diagram (Figure 2): a Writer, a Reader, and the policy" width="1480" height="960">
-          </a>
+          <figure class="lead-figure">
+            <a href="https://yoondol.github.io/reusemem/" aria-label="ReuseMem project page">
+              <img src="./assets/figures/reusemem-fig1.webp" alt="ReuseMem Figure 1: one recording made before any request supports two later goals, identifying the USB case and restoring it to its original position" width="792" height="325">
+            </a>
+            <figcaption><span>Fig. 1</span> The case contents are recorded before any request. Later requests with different goals read the same memory.</figcaption>
+          </figure>
           <div class="lead-text">
-            <p>A robot often records what it sees before it knows what it will be asked to do. ReuseMem learns a goal-conditioned retriever that scores each past observation by how much it improves expert-action prediction, then passes the selected observations through a small learned interface to a frozen policy backbone. We test it on four simulated tasks and in two controlled scenarios on an SO-101 arm, where one recording serves different later requests.</p>
-            <p class="links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
+            <p>A robot often records what it sees before it knows what it will be asked to do. ReuseMem learns a goal-conditioned retriever that scores each past observation by how much it improves expert-action prediction, then passes the selected observations through a small learned interface to a frozen policy backbone. It is tested on four simulated tasks and in two controlled scenarios on an SO-101 arm.</p>
+            <p class="links lead-links"><a href="https://yoondol.github.io/reusemem/">Project page</a><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
           </div>
         </li>
 
@@ -122,7 +129,7 @@
 
         <li class="paper" id="iiot">
           <span class="num">3</span>
-          <div class="thumb"><img src="./assets/figures/iiot-alternate.webp" alt="Photograph of the legacy packaging machine" loading="lazy"></div>
+          <div class="thumb"><img src="./assets/figures/iiot-fig3b.webp" alt="Figure 3(b) from the paper: Phase 3 factory floor plan with two LoRaWAN gateways and sensor-to-gateway paths across both buildings" width="1100" height="671" loading="lazy"></div>
           <div class="cite">
             <h3>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</p>
@@ -155,7 +162,7 @@
 
         <li class="paper paper-co" id="sbc-egpu">
           <span class="num">6</span>
-          <a class="thumb" href="https://doi.org/10.1109/ACCESS.2026.3722613" aria-label="IEEE Access paper on SBC and eGPU integration"><img src="./assets/figures/sbc-egpu-alternate.webp" alt="Simplified diagram of the published setup: Raspberry Pi 5B through a uPCIty HAT to a Radeon RX 7600 XT" loading="lazy"></a>
+          <a class="thumb" href="https://doi.org/10.1109/ACCESS.2026.3722613" aria-label="IEEE Access paper on SBC and eGPU integration"><img src="./assets/figures/sbc-egpu-fig1.webp" alt="Figure 1 from the paper: hardware setup with a Raspberry Pi 5B, uPCIty HAT, external GPU, and separate power supply" width="620" height="342" loading="lazy"></a>
           <div class="cite">
             <h3><a href="https://doi.org/10.1109/ACCESS.2026.3722613">New Possibilities: Integrating an SBC With an eGPU for Small- to Medium-Scale LLMs</a></h3>
             <p class="authors">Yeongmo Lee, Wonjib Kim, Dayeon Jung, Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dongchul Park</p>
@@ -247,7 +254,7 @@
           <li><span class="when">2024 – 2025</span><span class="role-name">Undergraduate Researcher</span></li>
         </ul>
         <dl class="focus">
-          <div><dt>Robot manipulation</dt><dd>Asked whether one recording, made before the task is known, can serve different later goals, and designed the simulated and real-arm tests of ReuseMem around that question.</dd></div>
+          <div><dt>Robot manipulation</dt><dd>Asked whether one recording, made before the task is known, can serve different later goals. Built ReuseMem around that question and designed its simulated and real-arm tests so they isolate what the policy gains from the selected memory.</dd></div>
           <div><dt>Factory data systems</dt><dd>Designed measurements in an operating food factory that traced lost sensor readings across network, ingestion, and storage logs, diagnosed LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
           <div><dt>Distributed search</dt><dd>Optimized Elasticsearch for large-scale log data and characterized distributed search on resource-constrained edge clusters.</dd></div>
         </dl>
@@ -260,14 +267,11 @@
       <article class="tero" aria-labelledby="tero-h">
         <div class="tero-head">
           <h3 id="tero-h"><a href="https://tero.kr/">TERO</a></h3>
-          <p class="role">Owner and Data Infrastructure Engineer, 2026 – present</p>
+          <a class="tero-url" href="https://tero.kr/">tero.kr<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a>
         </div>
+        <p class="role">Owner and Data Infrastructure Engineer, 2026 – present</p>
         <p class="tero-copy">I run TERO, a software business for small manufacturers, and build its data infrastructure myself, from sensor and equipment ingestion and edge buffering to monitoring dashboards and operational alerts.</p>
-        <dl class="tero-products">
-          <div><dt>Factory OS</dt><dd>Unifies production and traceability workflows.</dd></div>
-          <div><dt>Edge</dt><dd>Connects equipment signals to usable data.</dd></div>
-          <div><dt>Agent</dt><dd>Helps operators retrieve source-backed information.</dd></div>
-        </dl>
+        <p class="tero-products"><span class="tero-label">Products</span> Factory OS for production and traceability workflows, Edge for equipment signals, and Agent for source-backed retrieval by operators.</p>
       </article>
 
       <article class="entry">
@@ -282,9 +286,9 @@
       <article class="entry">
         <p class="when">2024 – 2025</p>
         <div class="entry-body">
-          <h3>Sprout for SeSAC</h3>
+          <h3>Sprout for <a href="https://sesac.seoul.kr/sesac/introduction/intro.do">SeSAC</a>, in collaboration with <a href="https://www.sba.seoul.kr/">Seoul Business Agency (SBA)</a></h3>
           <p class="role">Project Manager</p>
-          <p>Led a six-person team that built and deployed an education management platform for Seoul Business Agency’s SeSAC program.</p>
+          <p>Led a six-person team that built and deployed an education management platform for SBA’s SeSAC program.</p>
         </div>
       </article>
     </section>
@@ -329,7 +333,7 @@
   </main>
 
   <footer class="foot">
-    <p>Portrait courtesy of the Data Computing Systems Lab. Paper images come from the linked papers, the ReuseMem project page, and author manuscripts; the eGPU image is a simplified diagram based on the published setup.</p>
+    <p>Portrait courtesy of the Data Computing Systems Lab. Paper figures are reproduced from the linked papers, the ReuseMem project page, and author manuscripts. The eGPU figure is from Lee et al., <cite>IEEE Access</cite>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
   </footer>
 </body>
 </html>
