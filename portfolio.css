@@ -1,8 +1,7 @@
-/* Yoonseok Kang, research profile (v114).
+/* Yoonseok Kang, research profile (v121).
    Local fonts: Space Grotesk for headings, Instrument Sans for text.
-   site.js adds the nav robot and active-section state; portfolio-motion.js
-   runs the one-shot mini robot under the ReuseMem photo. Everything works
-   without either script.
+   site.js adds the nav robot and active-section state. The page works
+   without it.
 
    Warm paper background, navy-graphite ink, one saturated dark teal accent,
    faint lab-grid texture only on the ReuseMem spotlight. */
@@ -140,22 +139,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 }
 .wordmark {
   flex: none;
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
+  display: inline-block;
   padding: .5rem 0 var(--lane);
   color: var(--ink);
   font: 600 1.1rem/1.9rem var(--head);
   letter-spacing: -.015em;
   text-decoration: none;
-}
-.wordmark::before {
-  content: "";
-  width: .6rem;
-  height: .6rem;
-  border-radius: 2px;
-  background: var(--accent);
-  box-shadow: 3px 3px 0 var(--accent-tint);
 }
 .wordmark:hover { color: var(--accent-deep); }
 
@@ -259,7 +248,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .page {
   width: min(100% - 2 * var(--gutter), var(--measure));
   margin-inline: auto;
-  padding-block: 3.5rem 2rem;
+  padding-block: 3.5rem 5rem;
 }
 
 /* Profile: portrait beside name, affiliation, bio and link controls. */
@@ -506,48 +495,6 @@ h3 { color: var(--ink); font-size: 1rem; font-weight: 600; line-height: 1.4; }
   box-shadow: var(--shadow), 0 0 0 1px rgba(20, 34, 53, .08);
 }
 
-/* Mini robot: one trip along a short rail under the photo, then rest.
-   Without JS (or with reduced motion) it simply rests at the far end. */
-.spot-track {
-  position: relative;
-  height: 28px;
-  margin-top: .7rem;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(90deg, rgba(0, 103, 106, .35) 0 5px, transparent 5px 10px) left 0 bottom 1px / 100% 2px no-repeat;
-}
-.spot-track::after {
-  /* the dock the robot parks at */
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 38px;
-  height: 4px;
-  border-radius: 2px;
-  background: var(--accent-tint);
-}
-.mini {
-  position: absolute;
-  bottom: 2px;
-  left: calc(100% - 34px);
-  width: 30px;
-  height: 25px;
-  overflow: visible;
-}
-.spot-track.is-armed .mini { left: 0; }
-.spot-track.is-run .mini {
-  left: calc(100% - 34px);
-  transition: left 1.9s cubic-bezier(.55, .05, .3, 1) .15s;
-}
-.spot-track.is-run .mini .bot-shell,
-.spot-track.is-run .mini .bot-visor,
-.spot-track.is-run .mini .bot-eye,
-.spot-track.is-run .mini .bot-antenna,
-.spot-track.is-run .mini .bot-tip { animation: mini-bob .16s ease-in-out .15s 12 alternate; }
-.spot-track.is-run .mini .bot-tip { animation: mini-bob .16s ease-in-out .15s 12 alternate, bot-ping .5s ease-out 2.1s; transform-box: fill-box; transform-origin: 50% 50%; }
-@keyframes mini-bob { to { transform: translateY(-1.5px); } }
-
 /* ----------------------------------------------------------- education */
 
 .degrees { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
@@ -605,6 +552,60 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
 
 /* --------------------------------------------------- patents and software */
 
+/* Collapsed by default. The summary is the section heading, so the closed
+   state reads like every other section rail. */
+.fold > details { grid-column: 1 / -1; }
+.fold summary {
+  display: grid;
+  gap: .3rem;
+  align-items: baseline;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 6px;
+}
+.fold summary::-webkit-details-marker { display: none; }
+.fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.fold summary h2 { margin-bottom: 0; }
+.fold summary h2::before {
+  content: "";
+  display: block;
+  width: 1.6rem;
+  height: 3px;
+  margin-bottom: .65rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.fold summary:hover h2 { color: var(--accent-deep); }
+.fold .fold-body { margin-top: 1.25rem; }
+
+/* Expand/collapse affordance: a chevron after the heading that rotates open. */
+.fold summary h2 { display: flex; flex-wrap: wrap; align-items: center; column-gap: .5rem; }
+.fold summary h2::before { flex-basis: 100%; }
+.fold summary h2::after {
+  content: "";
+  flex: none;
+  width: .45rem;
+  height: .45rem;
+  margin-top: -.2rem;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  transition: transform .15s ease, margin .15s ease;
+}
+.fold details[open] > summary h2::after { margin-top: .2rem; transform: rotate(-135deg); }
+.fold summary:hover h2::after { border-color: var(--accent-deep); }
+
+/* Closed rows stay compact, especially consecutive folds. */
+.fold.block + .fold.block, .fold + .fold { margin-top: 1.5rem; }
+.fold:has(> details:not([open])) { padding-top: .9rem; }
+@media (prefers-reduced-motion: reduce) { .fold summary h2::after { transition: none; } }
+
+@media (min-width: 52.01rem) {
+  .fold summary { grid-template-columns: var(--rail) minmax(0, 1fr); column-gap: var(--rail-gap); }
+  .fold summary h2 { font-size: 1.25rem; }
+  .fold .fold-body { margin-left: calc(var(--rail) + var(--rail-gap)); }
+}
+
 .ip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
 .ip-group h3 { margin-bottom: .35rem; font: 600 1rem/1.35 var(--head); }
 .ip li { display: grid; gap: .05rem; padding-block: .55rem; border-top: 1px solid var(--line); }
@@ -615,17 +616,6 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
 
 .tools { display: grid; gap: .2rem; margin-bottom: 1rem; font-size: .96rem; }
 .tools span { margin-right: .5rem; color: var(--ink); font-weight: 650; }
-
-/* -------------------------------------------------------------- footer */
-
-.foot {
-  width: min(100% - 2 * var(--gutter), var(--measure));
-  margin: 3rem auto 0;
-  padding-block: 1.1rem 2.5rem;
-  border-top: 1px solid var(--line);
-  color: var(--soft);
-  font-size: .82rem;
-}
 
 /* ---------------------------------------------------------- responsive */
 
@@ -684,13 +674,13 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .bot, .bot *, .nav-list a, .mini, .mini * { transition: none !important; animation: none !important; }
+  .bot, .bot *, .nav-list a { transition: none !important; animation: none !important; }
 }
 
 /* --------------------------------------------------------------- print */
 
 @media print {
-  .topbar, .skip, .bot, .spot-track { display: none; }
+  .topbar, .skip, .bot { display: none; }
   body { background: #fff; }
   .page { width: auto; padding: 0; }
   .block { margin-top: 1.75rem; }
