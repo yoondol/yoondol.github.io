@@ -41,7 +41,7 @@ body {
 
 a { color: var(--green); text-underline-offset: .18em; }
 a:hover { color: var(--green-dark); }
-a:focus-visible, summary:focus-visible {
+a:focus-visible {
   outline: 2px solid var(--green);
   outline-offset: 4px;
 }
@@ -176,8 +176,9 @@ figcaption { margin-top: .55rem; color: var(--muted); font-size: .84rem; }
   letter-spacing: -.02em;
 }
 .authors { color: var(--muted); font-size: .92rem; line-height: 1.5; }
-.authors strong, .manuscripts li b { color: var(--ink); }
+.authors strong { color: var(--ink); }
 .feature-description { margin-top: .9rem; }
+.feature-result { margin-top: .62rem; color: var(--muted); font-size: .94rem; }
 .paper-links { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; margin-top: .7rem; }
 .paper-links a { font-size: .94rem; font-weight: 650; }
 
@@ -211,20 +212,8 @@ figcaption { margin-top: .55rem; color: var(--muted); font-size: .84rem; }
 .paper-copy h3 a:hover { color: var(--green-dark); text-decoration: underline; }
 .paper-copy p:not(.authors, .venue) { margin-top: .47rem; color: var(--muted); }
 .paper-text { grid-template-columns: 1fr; }
-.manuscripts { margin-top: 1rem; border: 1px solid var(--line); border-radius: 5px; }
-.manuscripts summary {
-  cursor: pointer;
-  padding: .75rem 1rem;
-  font-weight: 650;
-  color: var(--green-dark);
-}
-.manuscripts ul {
-  padding: .1rem 1rem .35rem 2.35rem;
-  margin-top: 0;
-}
-.manuscripts li { margin-bottom: .85rem; padding-left: .17rem; }
-.manuscripts li strong, .manuscripts li span { display: block; }
-.manuscripts li span { color: var(--muted); font-size: .92rem; line-height: 1.5; }
+.journal-rank { font-size: .89rem; }
+.journal-rank a { font-weight: 650; }
 
 .about-grid { display: grid; grid-template-columns: 1fr 1.16fr; gap: clamp(1.3rem, 5vw, 4.5rem); }
 .about-item h3 { font-size: 1.16rem; margin-bottom: .65rem; }

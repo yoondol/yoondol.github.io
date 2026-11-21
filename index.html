@@ -21,8 +21,8 @@
     <div class="wrap header-inner">
       <a class="wordmark" href="#top">Yoonseok Kang</a>
       <nav aria-label="Main navigation">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
+        <a href="#research">ReuseMem</a>
+        <a href="#publications">Papers</a>
         <a href="#about">About</a>
         <a class="nav-cv" href="assets/Yoonseok_Kang_CV.pdf">CV</a>
       </nav>
@@ -48,11 +48,13 @@
       </figure>
     </section>
 
-    <section class="section feature" id="research" aria-labelledby="research-heading">
+    <section class="section publications" id="publications" aria-labelledby="publications-heading">
       <header class="section-header">
-        <h2 id="research-heading">Featured research</h2>
+        <h2 id="publications-heading">Papers</h2>
+        <a href="https://orcid.org/0009-0003-4190-193X" class="section-link">ORCID</a>
       </header>
-      <article class="feature-body" aria-labelledby="reusemem-title">
+
+      <article class="feature-body" id="research" aria-labelledby="reusemem-title">
         <figure class="feature-figure">
           <a class="figure-link" href="https://arxiv.org/html/2611.21115v1#S4.SS4" aria-label="View ReuseMem’s physical robot experiments in the paper">
             <img src="assets/figures/reusemem.webp" alt="Two sequences from the ReuseMem experiments. An SO-101 robot uses earlier observations to select and return a case or relocate and restore a toy." width="1312" height="584">
@@ -60,20 +62,14 @@
           <figcaption>SO-101 manipulation sequences from <a href="https://arxiv.org/abs/2611.21115">ReuseMem</a>.</figcaption>
         </figure>
         <div class="feature-copy">
-          <p class="venue">arXiv preprint <span aria-hidden="true">/</span> November 2026</p>
+          <p class="venue">Featured paper <span aria-hidden="true">/</span> arXiv preprint <span aria-hidden="true">/</span> November 2026</p>
           <h3 id="reusemem-title">ReuseMem <span>One Memory, Multiple Goals in Robot Manipulation</span></h3>
           <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
           <p class="feature-description">What should a robot remember when its next goal is still unknown? ReuseMem learns to retrieve evidence for each new request from one visual record and combines it with the current scene to guide manipulation.</p>
-          <div class="paper-links"><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">Paper PDF</a></div>
+          <p class="feature-result">At the same memory budget, both goals succeeded from independent resets in 121 of 200 simulated recordings, compared with 72 of 200 with uniform selection.</p>
+          <div class="paper-links"><a href="https://arxiv.org/abs/2611.21115">arXiv</a><a href="https://arxiv.org/pdf/2611.21115">Paper PDF</a><a href="https://arxiv.org/html/2611.21115v1#S4">Experiments</a></div>
         </div>
       </article>
-    </section>
-
-    <section class="section publications" id="publications" aria-labelledby="publications-heading">
-      <header class="section-header">
-        <h2 id="publications-heading">Publications</h2>
-        <a href="https://orcid.org/0009-0003-4190-193X" class="section-link">ORCID</a>
-      </header>
 
       <article class="paper">
         <a class="paper-figure" href="https://doi.org/10.3390/systems14050515" aria-label="Open the Operational Data Foundation paper">
@@ -84,7 +80,39 @@
           <h3><a href="https://doi.org/10.3390/systems14050515">Operational Data Foundation Framework for Smart Manufacturing in SMEs: Field Implementation and Evaluation</a></h3>
           <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
           <p>Designed and evaluated a factory data pipeline that makes it possible to trace where sensor data are lost and to reprocess historical records.</p>
+          <p class="journal-rank"><a href="https://www.mdpi.com/about/announcements/17249">2025 JCR Q1, top 6.5%</a> <span>(18/275 in Social Sciences, Interdisciplinary)</span></p>
           <div class="paper-links"><a href="https://doi.org/10.3390/systems14050515">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="paper">
+        <a class="paper-figure" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094" aria-label="Open the Elasticsearch paper">
+          <img src="assets/figures/elasticsearch.webp" alt="Bar charts comparing Elasticsearch search time during concurrent indexing under same-index and cross-index configurations" width="1092" height="332" loading="lazy">
+        </a>
+        <div class="paper-copy">
+          <p class="venue">Journal of Platform Technology <span aria-hidden="true">/</span> 2025</p>
+          <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
+          <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
+          <p>Measured how resource allocation, search settings, and concurrent indexing affect Elasticsearch performance.</p>
+          <div class="paper-links"><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="paper paper-text">
+        <div class="paper-copy">
+          <p class="venue">Manuscript under review <span aria-hidden="true">/</span> 2026</p>
+          <h3>Characterization of Distributed Search on Resource-Constrained Edge Clusters</h3>
+          <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
+          <p>Benchmarking distributed indexing and search on resource-constrained clusters.</p>
+        </div>
+      </article>
+
+      <article class="paper paper-text">
+        <div class="paper-copy">
+          <p class="venue">Manuscript under review <span aria-hidden="true">/</span> 2026</p>
+          <h3>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</h3>
+          <p class="authors"><strong>Yoonseok Kang</strong>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</p>
+          <p>Investigated LoRaWAN interference and integrated a legacy controller and scale in an operating food factory.</p>
         </div>
       </article>
 
@@ -105,19 +133,6 @@
         </div>
       </article>
 
-      <article class="paper">
-        <a class="paper-figure" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094" aria-label="Open the Elasticsearch paper">
-          <img src="assets/figures/elasticsearch.webp" alt="Bar charts comparing Elasticsearch search time during concurrent indexing under same-index and cross-index configurations" width="1092" height="332" loading="lazy">
-        </a>
-        <div class="paper-copy">
-          <p class="venue">Journal of Platform Technology <span aria-hidden="true">/</span> 2025</p>
-          <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
-          <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
-          <p>Measured how resource allocation, search settings, and concurrent indexing affect Elasticsearch performance.</p>
-          <div class="paper-links"><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Paper</a></div>
-        </div>
-      </article>
-
       <article class="paper paper-text" id="kcc">
         <div class="paper-copy">
           <p class="venue">Korea Computer Congress <span aria-hidden="true">/</span> 2025</p>
@@ -127,17 +142,41 @@
         </div>
       </article>
 
-      <details class="manuscripts">
-        <summary>Manuscripts under review</summary>
-        <ul>
-          <li><strong>Characterization of Distributed Search on Resource-Constrained Edge Clusters</strong><span><b>Yoonseok Kang</b>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</span></li>
-          <li><strong>Establishing Reliable IIoT Infrastructure in an SME Factory: LoRaWAN Interference Diagnosis and Legacy Equipment Integration</strong><span><b>Yoonseok Kang</b>, Kihoon Lee, Seunghoon Jeon, Dayeon Jung, Wonjib Kim, Seungmin Rho, Dongchul Park</span></li>
-          <li><strong>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</strong><span>Seunghoon Jeon, <b>Yoonseok Kang</b>, Dayeon Jung, Wonjib Kim, Dongchul Park</span></li>
-          <li><strong>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</strong><span>Dayeon Jung, Wonjib Kim, <b>Yoonseok Kang</b>, Seunghoon Jeon, Seungmin Rho, Dongchul Park</span></li>
-          <li><strong>Radar: A comprehensive self-tuning Hadoop framework for low power clusters</strong><span>Seunghoon Jeon, <b>Yoonseok Kang</b>, Dayeon Jung, Yeongmo Lee, Dongchul Park</span></li>
-          <li><strong>PiPP: A Pipeline-Parallel Distributed LLM Inference Platform for Low Cost SBC Clusters</strong><span>Dayeon Jung, Wonjib Kim, <b>Yoonseok Kang</b>, Seunghoon Jeon, Dongchul Park</span></li>
-        </ul>
-      </details>
+      <article class="paper paper-text">
+        <div class="paper-copy">
+          <p class="venue">Manuscript under review <span aria-hidden="true">/</span> 2026</p>
+          <h3>HAT: Hadoop Adaptive Tuning via Binary Tree Scheduler for Heterogeneous Edge Clusters</h3>
+          <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Wonjib Kim, Dongchul Park</p>
+          <p>A binary-tree scheduler adapts Hadoop execution to heterogeneous edge nodes.</p>
+        </div>
+      </article>
+
+      <article class="paper paper-text">
+        <div class="paper-copy">
+          <p class="venue">Manuscript under review <span aria-hidden="true">/</span> 2026</p>
+          <h3>Radar: A comprehensive self-tuning Hadoop framework for low power clusters</h3>
+          <p class="authors">Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dayeon Jung, Yeongmo Lee, Dongchul Park</p>
+          <p>Studies automatic tuning of Hadoop on low-power clusters.</p>
+        </div>
+      </article>
+
+      <article class="paper paper-text">
+        <div class="paper-copy">
+          <p class="venue">Manuscript under review <span aria-hidden="true">/</span> 2026</p>
+          <h3>TIDE: An Efficient Distributed LLM Prefill System on Low Cost SBC Clusters</h3>
+          <p class="authors">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Seungmin Rho, Dongchul Park</p>
+          <p>Studies distributed LLM prefill across low-cost single-board computers.</p>
+        </div>
+      </article>
+
+      <article class="paper paper-text">
+        <div class="paper-copy">
+          <p class="venue">Manuscript under review <span aria-hidden="true">/</span> 2026</p>
+          <h3>PiPP: A Pipeline-Parallel Distributed LLM Inference Platform for Low Cost SBC Clusters</h3>
+          <p class="authors">Dayeon Jung, Wonjib Kim, <strong>Yoonseok Kang</strong>, Seunghoon Jeon, Dongchul Park</p>
+          <p>Studies pipeline-parallel LLM inference across low-cost single-board computers.</p>
+        </div>
+      </article>
     </section>
 
     <section class="section about" id="about" aria-labelledby="about-heading">
