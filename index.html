@@ -98,7 +98,8 @@
               <h3><a href="https://yoondol.github.io/reusemem/"><span class="lead-name">ReuseMem</span>: One Memory, Multiple Goals in Robot Manipulation</a></h3>
               <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
               <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
-              <p class="summary">A robot watches two cases before they are moved, then later fetches the one holding a USB drive and returns it. I trained a retriever, supervised only by expert-action prediction, that selects past frames for a given goal, along with a learned adapter that combines the retrieved frames with current observations for a frozen VLA policy. In simulation, I compared learned retrieval with uniform frame sampling at the same frame count, then tested the system separately on an SO-101 arm.</p>
+              <p class="summary">An arm watches two open cases, one holding a USB drive, before both are closed and moved. Fetching the USB means carrying its closed case, which requires remembering which case held the drive. Returning that case requires remembering where it first stood. ReuseMem reuses one recording for each new request.</p>
+              <p class="summary">I trained a retriever to choose past frames by how well they support expert-action prediction, and built an adapter that combines those frames with the current view for a frozen vision-language-action policy. Simulation compares learned and uniform retrieval at matched frame counts, and robot-arm trials evaluate the system separately.</p>
               <p class="links"><a class="cta" href="https://yoondol.github.io/reusemem/">Project and demos<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a><a class="chip" href="https://arxiv.org/abs/2611.21115">arXiv</a><a class="chip" href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
             </div>
             <figure class="spot-fig">
@@ -113,7 +114,6 @@
             <h3><a href="https://doi.org/10.3390/systems14050515">Operational Data Foundation Framework for Smart Manufacturing in SMEs: Field Implementation and Evaluation</a></h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
             <p class="venue"><cite>Systems</cite> 14(5), 515, 2026. <span class="jcr">JCR Q1, Top 6%</span></p>
-            <p class="links"><a href="https://doi.org/10.3390/systems14050515">DOI</a></p>
           </div>
         </li>
 
@@ -141,7 +141,6 @@
             <h3><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">Optimizing Indexing and Search Performance of Elasticsearch for Large-Scale Log Data</a></h3>
             <p class="authors"><strong>Yoonseok Kang</strong>, Dongchul Park</p>
             <p class="venue"><cite>Journal of Platform Technology</cite> 13(5), 24–44, 2025.</p>
-            <p class="links"><a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003261094">KCI</a></p>
           </div>
         </li>
 
@@ -151,7 +150,6 @@
             <h3><a href="https://doi.org/10.1109/ACCESS.2026.3722613">New Possibilities: Integrating an SBC With an eGPU for Small- to Medium-Scale LLMs</a></h3>
             <p class="authors">Yeongmo Lee, Wonjib Kim, Dayeon Jung, Seunghoon Jeon, <strong>Yoonseok Kang</strong>, Dongchul Park</p>
             <p class="venue"><cite>IEEE Access</cite> 14, 124414–124429, 2026. <span class="jcr">JCR Q2, Top 35%</span></p>
-            <p class="links"><a href="https://doi.org/10.1109/ACCESS.2026.3722613">DOI</a><a href="https://github.com/Data-Computing-Systems-Lab/sbc-egpu-llm">Code</a></p>
           </div>
         </li>
 
@@ -209,7 +207,6 @@
           <h3>B.Eng. in Data Science and B.Ed. in Education</h3>
           <p class="school">Chung-Ang University, Seoul</p>
           <p class="gpa"><span>GPA</span> <strong>4.15</strong> / 4.50</p>
-          <p class="note">One cumulative GPA covering both degrees</p>
         </article>
       </div>
     </section>
