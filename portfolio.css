@@ -544,29 +544,34 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
 .focus dt { color: var(--ink); font-size: .9rem; font-weight: 650; }
 
 /* Give the featured research and industry entries the same card treatment. */
-.focus .highlight-card, .entry.highlight-card {
+.focus .highlight-card, .entry-body.highlight-card {
   padding: 1.08rem 1.25rem;
   border: 1px solid #bfd8d1;
   border-radius: var(--radius);
   background: linear-gradient(120deg, var(--accent-wash), var(--surface) 82%);
   box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
 }
-.focus .highlight-card dt, .entry.highlight-card h3 {
+.focus .highlight-card dt, .entry-body.highlight-card h3 {
   margin-bottom: .18rem;
   color: var(--accent-deep);
   font: 650 1.15rem/1.3 var(--head);
 }
-.entry.highlight-card {
-  margin-bottom: .65rem;
-  grid-template-columns: 7.25rem minmax(0, 1fr);
+.proposal-program {
+  margin-top: .35rem;
+  color: var(--soft);
+  font-size: .88rem;
 }
-.entry.highlight-card h3 a {
+.entry-featured:has(> .highlight-card) {
+  margin-bottom: .65rem;
+}
+.entry-featured:has(> .highlight-card) > .when { padding-top: 1.08rem; }
+.entry-body.highlight-card h3 a {
   display: inline-flex;
   align-items: center;
   gap: .22rem;
   color: inherit;
 }
-.entry-featured:not(.highlight-card) .entry-body {
+.entry-featured .entry-body:not(.highlight-card) {
   padding-left: .95rem;
   box-shadow: inset 2px 0 0 var(--accent);
 }
@@ -683,8 +688,9 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
   .entry, .lab, .roles li { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
   .entry .when { line-height: 1.4; }
   .lab > h3, .lab-location, .focus { grid-column: 1; }
-  .focus .highlight-card, .entry.highlight-card { padding: .85rem 1rem; }
-  .entry.highlight-card { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+  .focus .highlight-card, .entry-body.highlight-card { padding: .85rem 1rem; }
+  .entry-featured:has(> .highlight-card) { row-gap: .4rem; }
+  .entry-featured:has(> .highlight-card) > .when { padding-top: 0; }
   .roles li { grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; }
   .roles .when { order: 2; }
 }
