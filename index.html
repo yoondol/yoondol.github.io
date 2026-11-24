@@ -14,7 +14,7 @@
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="preload" href="./assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./portfolio.css?v=121">
+  <link rel="stylesheet" href="./portfolio.css?v=122">
   <script src="./site.js" defer></script>
   <title>Yoonseok Kang | Robot Learning</title>
 </head>
@@ -74,7 +74,7 @@
       <img class="portrait" src="./assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
       <div class="profile-text">
         <h1 id="name">Yoonseok Kang</h1>
-        <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul</p>
+        <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul, South Korea</p>
         <div class="bio">
           <p class="bio-lead">I study how robot manipulation policies can <strong>generalize</strong> to new goals and scenes, and how they can <strong>adapt</strong> from limited data. My recent work builds learned memory for manipulation, so a robot can reuse what it saw earlier after its own actions have changed the scene.</p>
           <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>. Before robot learning, I built sensor and equipment data pipelines for an operating factory and traced missing sensor readings to LoRaWAN interference. I also studied distributed search on low-power edge clusters.</p>
@@ -196,7 +196,7 @@
         <article class="degree">
           <p class="when">2025 – 2027 (expected)</p>
           <h3>M.S., Department of Security Convergence</h3>
-          <p class="school">Chung-Ang University, Seoul</p>
+          <p class="school">Chung-Ang University, Seoul, South Korea</p>
           <p class="gpa"><span>GPA</span> <strong>4.50</strong> / 4.50</p>
           <p class="note">Advised by <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a></p>
           <p class="award">CAU Graduate Research Scholarship</p>
@@ -204,7 +204,7 @@
         <article class="degree">
           <p class="when">2018 – 2025</p>
           <h3>B.Eng. in Data Science and B.A. in Education</h3>
-          <p class="school">Chung-Ang University, Seoul</p>
+          <p class="school">Chung-Ang University, Seoul, South Korea</p>
           <p class="gpa"><span>GPA</span> <strong>4.15</strong> / 4.50</p>
           <p class="award"><strong>Magna Cum Laude</strong></p>
         </article>
@@ -215,12 +215,13 @@
       <h2 id="research-h">Research experience</h2>
       <article class="lab">
         <h3><a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University</h3>
+        <p class="lab-location">Seoul, South Korea</p>
         <ul class="roles">
           <li><span class="when">2025 – present</span><span class="role-name">Graduate Researcher</span></li>
           <li><span class="when">2024 – 2025</span><span class="role-name">Undergraduate Researcher</span></li>
         </ul>
         <dl class="focus">
-          <div><dt>Robot manipulation</dt><dd>Designed simulation experiments for ReuseMem that compare it with other methods given the same number of past frames, and that remove one part at a time to see what each contributes. Then tested the policy on a real robot arm.</dd></div>
+          <div class="highlight-card"><dt>Robot manipulation</dt><dd>Designed simulation experiments for ReuseMem that compare it with other methods given the same number of past frames, and that remove one part at a time to see what each contributes. Then tested the policy on a real robot arm.</dd></div>
           <div><dt>Factory data systems</dt><dd>Traced missing sensor readings at an operating factory to LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
           <div><dt>Distributed search</dt><dd>Measured how node roles, cluster size and indexing parallelism affect Elasticsearch on low-power edge clusters.</dd></div>
         </dl>
@@ -230,10 +231,10 @@
     <section class="block" id="industry" aria-labelledby="industry-h">
       <h2 id="industry-h">Industry</h2>
 
-      <article class="entry entry-featured">
+      <article class="entry entry-featured highlight-card">
         <p class="when">2026 – present</p>
         <div class="entry-body">
-          <h3><a href="https://tero.kr/">TERO</a></h3>
+          <h3><a href="https://tero.kr/">TERO<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a></h3>
           <p class="role">Owner and Data Infrastructure Engineer</p>
           <p>Visit manufacturers on site, define requirements with their teams, and build a tool that connects machine signals with production and quality records, so operators can trace any record back to its source when needed.</p>
         </div>
