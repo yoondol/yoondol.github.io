@@ -1,8 +1,8 @@
 # Yoonseok Kang
 
-Research homepage for [Yoonseok Kang](https://yoondol.github.io/). The [Overview](https://yoondol.github.io/overview/) is a second layout with its own CV. GitHub Pages serves the root of the `main` branch. HTML and CSS are served directly, with no build or third-party client scripts.
+Research homepage for [Yoonseok Kang](https://yoondol.github.io/). GitHub Pages serves the root of the `main` branch. HTML and CSS are served directly, with no build or third-party client scripts.
 
-The [research profile](https://yoondol.github.io/profile/) highlights ReuseMem, includes a real-robot trial, and links to the two-page academic CV.
+The [research profile](https://yoondol.github.io/profile/) highlights ReuseMem, includes a real-robot trial, and links to the two-page academic CV. All profile layouts use the same PDF at `assets/Yoonseok_Kang_CV-125.pdf`. Replace that file in place when publishing a new CV to keep every download link current.
 
 For local preview, run `python3 -m http.server 8000` from this directory and open `http://localhost:8000/`.
 
