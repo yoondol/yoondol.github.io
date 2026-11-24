@@ -14,7 +14,7 @@
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="preload" href="./assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./portfolio.css?v=123">
+  <link rel="stylesheet" href="./portfolio.css?v=124">
   <script src="./site.js" defer></script>
   <title>Yoonseok Kang | Robot Learning</title>
 </head>
@@ -74,10 +74,9 @@
       <img class="portrait" src="./assets/yoonseok-kang.webp" alt="Portrait of Yoonseok Kang" width="640" height="800" fetchpriority="high">
       <div class="profile-text">
         <h1 id="name">Yoonseok Kang</h1>
-        <p class="affiliation">M.S. student at Chung-Ang University</p>
         <div class="bio">
-          <p class="bio-lead">I study how robot manipulation policies <strong>generalize to new goals and scenes</strong> and <strong>adapt from limited data</strong>. In <a href="#reusemem">ReuseMem</a>, we show how a robot can use the same visual history for different requests, even as its own actions change the scene.</p>
-          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a> in the <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>. Before focusing on robot learning, I built data pipelines for an operating factory and studied distributed search on low-power edge clusters. At <a href="https://tero.kr/">TERO</a>, I work with manufacturers to build software for the equipment and workflows they already use.</p>
+          <p class="bio-lead">I study how robots can <strong>adapt manipulation skills to new tasks</strong> with less human guidance. In <a href="#reusemem">ReuseMem</a>, we taught a robot to draw on the same visual history for different requests, even as its own actions changed the scene. I want to understand when a robot can rely on a skill it already has and when a short demonstration or correction would help it learn a new one.</p>
+          <p>I’m a master’s student at Chung-Ang University, advised by <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a> in the <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>. My background is in distributed systems, from search on low-power computers to the data systems I build with factory teams at <a href="https://tero.kr/">TERO</a>.</p>
         </div>
         <ul class="profile-links" aria-label="Contact and profiles">
           <li><a class="cv" href="./assets/Yoonseok_Kang_CV-125.pdf"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
@@ -223,7 +222,7 @@
         <dl class="focus">
           <div class="highlight-card">
             <dt>Robot manipulation</dt>
-            <dd>Collect demonstrations, adapt manipulation policies to use past observations, and test them in simulation and on a real robot arm. Compare runs from the same starting scene with different past observations to see how they affect object selection, grasping, and placement.</dd>
+            <dd>Train manipulation policies on teleoperated demonstrations. In simulation, vary what the policy remembers while keeping the scene fixed to see why it reaches for a particular object or places it in the wrong spot. On a real robot arm, test whether it can follow successive instructions as objects move or go out of view.</dd>
           </div>
           <div class="highlight-card">
             <dt>Grant proposal development</dt>
@@ -246,7 +245,7 @@
         <div class="entry-body highlight-card">
           <h3><a href="https://tero.kr/">TERO<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a></h3>
           <p class="role">Owner and Data Infrastructure Engineer</p>
-          <p>Work with factory teams on site to understand how they run production and record inspections. Decide which signals to collect from existing equipment and build software that ties them to production and quality records, so operators can trace a discrepancy back to its source.</p>
+          <p>Build software with manufacturers that helps operators trace production and quality problems using data from their existing machines. Design starts on the factory floor, with the people who use the equipment every day.</p>
         </div>
       </article>
 

@@ -251,7 +251,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
   padding-block: 3.5rem 5rem;
 }
 
-/* Profile: portrait beside name, affiliation, bio and link controls. */
+/* Profile: portrait beside name, bio and link controls. */
 .profile {
   display: grid;
   grid-template-columns: 10rem minmax(0, 1fr);
@@ -271,12 +271,6 @@ h1 {
   color: var(--ink);
   font: 600 clamp(2rem, 4.4vw, 3rem)/1.02 var(--head);
   letter-spacing: -.03em;
-}
-.affiliation {
-  margin-top: .6rem;
-  color: var(--soft);
-  font-size: .95rem;
-  line-height: 1.5;
 }
 .bio {
   display: grid;
@@ -675,9 +669,8 @@ h2 + .entry, .tools + .entry { padding-top: 0; }
   .nav-list a { padding: 0 .55rem; font-size: .85rem; }
   .profile { grid-template-columns: 5rem minmax(0, 1fr); gap: 0 1rem; align-items: center; }
   .profile-text { display: contents; }
-  .portrait { grid-column: 1; grid-row: 1 / 3; }
-  h1 { grid-column: 2; align-self: end; }
-  .affiliation { grid-column: 2; align-self: start; margin-top: .4rem; font-size: .88rem; }
+  .portrait { grid-column: 1; grid-row: 1; }
+  .profile h1 { grid-column: 2; align-self: center; }
   .bio, .profile-links { grid-column: 1 / -1; }
   .bio-lead { font-size: 1.02rem; }
   .block { margin-top: 3.25rem; }
