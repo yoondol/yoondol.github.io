@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Yoonseok Kang, M.S. researcher at Chung-Ang University studying manipulation policy generalization and data-efficient adaptation in robot learning.">
+  <meta name="description" content="Yoonseok Kang studies how robots generalize manipulation skills to new tasks and adapt from limited data. M.S. student at Chung-Ang University and first author of ReuseMem.">
   <meta name="theme-color" content="#f7f4ee">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yoonseok Kang | Robot Learning">
-  <meta property="og:description" content="Robot learning for manipulation, manufacturing data systems, papers and CV.">
+  <meta property="og:description" content="Robot learning for manipulation and adaptation from limited data. ReuseMem research, real-robot demos, and CV.">
   <meta property="og:url" content="https://yoondol.github.io/">
   <meta property="og:image" content="https://yoondol.github.io/assets/figures/reusemem-hardware.webp">
   <link rel="canonical" href="https://yoondol.github.io/">
@@ -76,8 +76,8 @@
         <h1 id="name">Yoonseok Kang</h1>
         <p class="affiliation">M.S. student, <a href="https://bigdata.cau.ac.kr/">Data Computing Systems Lab</a>, Chung-Ang University, Seoul, South Korea</p>
         <div class="bio">
-          <p class="bio-lead">I study how robot manipulation policies can <strong>generalize</strong> to new goals and scenes, and how they can <strong>adapt</strong> from limited data. My recent work builds learned memory for manipulation, so a robot can reuse what it saw earlier after its own actions have changed the scene.</p>
-          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>. Before robot learning, I built sensor and equipment data pipelines for an operating factory and traced missing sensor readings to LoRaWAN interference. I also studied distributed search on low-power edge clusters.</p>
+          <p class="bio-lead">I study how robot manipulation policies can <strong>generalize</strong> to new goals and scenes and <strong>adapt</strong> with limited new data. My recent work, <a href="#reusemem">ReuseMem</a>, lets a robot draw on what it saw earlier to act on different requests as its workspace changes.</p>
+          <p>I work with <a href="https://security.cau.ac.kr/bbs/board.php?bo_table=eng2_1&amp;wr_id=4">Dongchul Park</a>. Before working on robots, I built sensor and equipment data pipelines for an operating factory, diagnosed packet loss in its LoRa network, and studied distributed search on low-power edge clusters.</p>
         </div>
         <ul class="profile-links" aria-label="Contact and profiles">
           <li><a class="cv" href="./assets/Yoonseok_Kang_CV-125.pdf"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV</a></li>
@@ -98,7 +98,7 @@
               <h3><a href="https://yoondol.github.io/reusemem/"><span class="lead-name">ReuseMem</span>: One Memory, Multiple Goals in Robot Manipulation</a></h3>
               <p class="authors"><strong>Yoonseok Kang</strong>, Dayeon Jung, Seunghoon Jeon, Wonjib Kim, Dongchul Park</p>
               <p class="venue"><cite>arXiv</cite> preprint, 2026.</p>
-              <p class="summary">ReuseMem lets a robot draw on one visual history for a series of new requests, even as its own actions change the scene. I trained the retrieval step to select past observations that help predict an expert's action, and built an adapter that merges the selected history with the current view. In the demos, the robot carries out successive requests without resetting the scene.</p>
+              <p class="summary">ReuseMem lets a robot use one visual history for different requests that come later, even as its own actions change the scene. It learns which past observations are relevant to each request and combines them with what the robot sees now. We tested it in simulation and on a real robot arm, including successive requests without resetting the workspace.</p>
               <p class="links"><a class="cta" href="https://yoondol.github.io/reusemem/">Project and demos<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a><a class="chip" href="https://arxiv.org/abs/2611.21115">arXiv</a><a class="chip" href="https://arxiv.org/pdf/2611.21115">PDF</a></p>
             </div>
             <figure class="spot-fig">
@@ -221,16 +221,19 @@
           <li><span class="when">2024 – 2025</span><span class="role-name">Undergraduate Researcher</span></li>
         </ul>
         <dl class="focus">
-          <div class="highlight-card"><dt>Robot manipulation</dt><dd>Designed simulation experiments for ReuseMem that compare it with other methods given the same number of past frames, and that remove one part at a time to see what each contributes. Then tested the policy on a real robot arm.</dd></div>
+          <div class="highlight-card">
+            <dt>Memory-guided robot manipulation</dt>
+            <dd>I trained ReuseMem to select past observations that help predict an expert’s action and built the adapter that combines those observations with the current view. I compared retrieval methods with the same memory budget and tested successive requests on a real robot arm without resetting the scene.</dd>
+          </div>
           <div class="highlight-card">
             <dt>Grant proposal development</dt>
             <dd>
-              <p>Led the development and writing of the lab’s proposal on how robots can use large language models.</p>
+              <p>I led the development and writing of the lab’s proposal on how robots can use large language models.</p>
               <p class="proposal-program">2027 Individual Research Grants, South Korea’s Ministry of Science and ICT</p>
             </dd>
           </div>
-          <div><dt>Factory data systems</dt><dd>Traced missing sensor readings at an operating factory to LoRaWAN interference, and integrated a legacy controller and weighing scale.</dd></div>
-          <div><dt>Distributed search</dt><dd>Measured how node roles, cluster size and indexing parallelism affect Elasticsearch on low-power edge clusters.</dd></div>
+          <div><dt>Reliable factory data pipelines</dt><dd>I diagnosed packet loss at an operating factory and connected legacy equipment to the data pipeline. In one field case, packet reception rose from 33% to 95% after we tuned the LoRa network and reconnected devices.</dd></div>
+          <div><dt>Distributed search on edge clusters</dt><dd>I designed Elasticsearch benchmarks on low-power ARM clusters to separate the effects of node roles, cluster size, and indexing parallelism.</dd></div>
         </dl>
       </article>
     </section>
@@ -243,7 +246,7 @@
         <div class="entry-body highlight-card">
           <h3><a href="https://tero.kr/">TERO<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-out"/></svg></a></h3>
           <p class="role">Owner and Data Infrastructure Engineer</p>
-          <p>Visit manufacturers on site, define requirements with their teams, and build a tool that connects machine signals with production and quality records, so operators can trace any record back to its source when needed.</p>
+          <p>I work with factory teams on site to see how they track production and quality. At TERO, I build software that connects those records to machine signals so operators can trace them back to their source.</p>
         </div>
       </article>
 
@@ -252,7 +255,7 @@
         <div class="entry-body">
           <h3>ON LOG, in collaboration with <a href="https://www.ongo-ing.com/en/about">OnGoing Co., Ltd.</a></h3>
           <p class="role">Project Lead</p>
-          <p>Led the design and deployment of an AWS-based monitoring system that brings shop-floor sensor data from an operating factory into dashboards and alerts.</p>
+          <p>I led the deployment of an AWS monitoring pipeline that streams factory sensor and equipment data to operator dashboards and alerts.</p>
         </div>
       </article>
 
@@ -261,7 +264,7 @@
         <div class="entry-body">
           <h3>Sprout for <a href="https://sesac.seoul.kr/sesac/introduction/intro.do">SeSAC</a>, in collaboration with <a href="https://www.sba.seoul.kr/">Seoul Business Agency (SBA)</a></h3>
           <p class="role">Project Manager</p>
-          <p>Led delivery from requirements to production for a scheduling and announcement service used by SeSAC trainees and staff.</p>
+          <p>I led delivery of a scheduling and announcements platform for SeSAC trainees and staff.</p>
         </div>
       </article>
     </section>
