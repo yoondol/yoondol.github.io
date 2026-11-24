@@ -222,8 +222,8 @@
         </ul>
         <dl class="focus">
           <div class="highlight-card">
-            <dt>Memory-guided robot manipulation</dt>
-            <dd>I trained ReuseMem to select past observations that help predict an expert’s action and built the adapter that combines those observations with the current view. I compared retrieval methods with the same memory budget and tested successive requests on a real robot arm without resetting the scene.</dd>
+            <dt>Robot manipulation</dt>
+            <dd>I collect demonstrations, train manipulation policies, and test them in simulation and on a real robot arm. When a policy fails on a new instruction, I design experiments to see whether the robot missed the information it needed or had trouble carrying out the action.</dd>
           </div>
           <div class="highlight-card">
             <dt>Grant proposal development</dt>
@@ -232,8 +232,8 @@
               <p class="proposal-program">2027 Individual Research Grants, South Korea’s Ministry of Science and ICT</p>
             </dd>
           </div>
-          <div><dt>Reliable factory data pipelines</dt><dd>I diagnosed packet loss at an operating factory and connected legacy equipment to the data pipeline. In one field case, packet reception rose from 33% to 95% after we tuned the LoRa network and reconnected devices.</dd></div>
-          <div><dt>Distributed search on edge clusters</dt><dd>I designed Elasticsearch benchmarks on low-power ARM clusters to separate the effects of node roles, cluster size, and indexing parallelism.</dd></div>
+          <div><dt>Factory data systems</dt><dd>I built and tested a data pipeline in an operating factory, connected existing equipment, and traced where sensor readings went missing on their way to the database.</dd></div>
+          <div><dt>Distributed search</dt><dd>I designed Elasticsearch experiments on low-power edge clusters to find how adding machines or changing the work assigned to each one affects search and indexing.</dd></div>
         </dl>
       </article>
     </section>
